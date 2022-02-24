@@ -13,21 +13,21 @@ fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
 
-echo_and_run cd "/home/x/catkin_ws/src/universal_robot/ur_driver"
+echo_and_run cd "/home/x/Cobots-A/catkin_ws/src/universal_robot/ur_driver"
 
 # ensure that Python install destination exists
-echo_and_run mkdir -p "$DESTDIR/home/x/catkin_ws/install/lib/python3/dist-packages"
+echo_and_run mkdir -p "$DESTDIR/home/x/Cobots-A/catkin_ws/install/lib/python3/dist-packages"
 
 # Note that PYTHONPATH is pulled from the environment to support installing
 # into one location when some dependencies were installed in another
 # location, #123.
 echo_and_run /usr/bin/env \
-    PYTHONPATH="/home/x/catkin_ws/install/lib/python3/dist-packages:/home/x/catkin_ws/build/lib/python3/dist-packages:$PYTHONPATH" \
-    CATKIN_BINARY_DIR="/home/x/catkin_ws/build" \
+    PYTHONPATH="/home/x/Cobots-A/catkin_ws/install/lib/python3/dist-packages:/home/x/Cobots-A/catkin_ws/build/lib/python3/dist-packages:$PYTHONPATH" \
+    CATKIN_BINARY_DIR="/home/x/Cobots-A/catkin_ws/build" \
     "/usr/bin/python3" \
-    "/home/x/catkin_ws/src/universal_robot/ur_driver/setup.py" \
+    "/home/x/Cobots-A/catkin_ws/src/universal_robot/ur_driver/setup.py" \
      \
-    build --build-base "/home/x/catkin_ws/build/universal_robot/ur_driver" \
+    build --build-base "/home/x/Cobots-A/catkin_ws/build/universal_robot/ur_driver" \
     install \
     --root="${DESTDIR-/}" \
-    --install-layout=deb --prefix="/home/x/catkin_ws/install" --install-scripts="/home/x/catkin_ws/install/bin"
+    --install-layout=deb --prefix="/home/x/Cobots-A/catkin_ws/install" --install-scripts="/home/x/Cobots-A/catkin_ws/install/bin"

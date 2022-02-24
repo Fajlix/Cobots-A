@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/x/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/x/Cobots-A/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/x/catkin_ws/build
+CMAKE_BINARY_DIR = /home/x/Cobots-A/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/depend.make
@@ -58,17 +58,17 @@ include universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/progress
 include universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/flags.make
 
 universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o: universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/flags.make
-universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o: /home/x/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/x/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o"
-	cd /home/x/catkin_ws/build/universal_robot/ur_kinematics && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o -c /home/x/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp
+universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o: /home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/x/Cobots-A/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o"
+	cd /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_kinematics && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o -c /home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp
 
 universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.i"
-	cd /home/x/catkin_ws/build/universal_robot/ur_kinematics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/x/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp > CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.i
+	cd /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_kinematics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp > CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.i
 
 universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.s"
-	cd /home/x/catkin_ws/build/universal_robot/ur_kinematics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/x/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp -o CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.s
+	cd /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_kinematics && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics/src/ur_moveit_plugin.cpp -o CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.s
 
 # Object files for target ur10_moveit_plugin
 ur10_moveit_plugin_OBJECTS = \
@@ -77,115 +77,115 @@ ur10_moveit_plugin_OBJECTS = \
 # External object files for target ur10_moveit_plugin
 ur10_moveit_plugin_EXTERNAL_OBJECTS =
 
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/build.make
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_rdf_loader.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematics_plugin_loader.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_model_loader.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_constraint_sampler_manager_loader.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_pipeline.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_trajectory_execution_manager.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_plan_execution.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_scene_monitor.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_plugin_loader.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_cpp.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_ros_occupancy_map_monitor.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_exceptions.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_background_processing.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematics_base.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_model.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_transforms.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_state.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_trajectory.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_interface.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_detection.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_detection_fcl.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_detection_bullet.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematic_constraints.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_scene.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_constraint_samplers.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_request_adapter.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_profiler.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_python_tools.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_trajectory_processing.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_distance_field.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_distance_field.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematics_metrics.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_dynamics_solver.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_utils.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_test_utils.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/x86_64-linux-gnu/libfcl.so.0.6.1
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libccd.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libm.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liboctomap.so.1.9.7
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libBulletSoftBody.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libBulletCollision.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libLinearMath.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libkdl_parser.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liburdf.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole_bridge.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libsrdfdom.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libgeometric_shapes.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liboctomap.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liboctomath.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librandom_numbers.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libclass_loader.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libPocoFoundation.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libroslib.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librospack.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libpython3.8.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf_conversions.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libkdl_conversions.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/liborocos-kdl.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf2_ros.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libactionlib.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmessage_filters.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libroscpp.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf2.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librostime.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libcpp_common.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: /home/x/catkin_ws/devel/lib/libur10_kin.so
-/home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so: universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/x/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so"
-	cd /home/x/catkin_ws/build/universal_robot/ur_kinematics && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ur10_moveit_plugin.dir/link.txt --verbose=$(VERBOSE)
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/src/ur_moveit_plugin.cpp.o
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/build.make
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_rdf_loader.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematics_plugin_loader.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_model_loader.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_constraint_sampler_manager_loader.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_pipeline.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_trajectory_execution_manager.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_plan_execution.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_scene_monitor.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_plugin_loader.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_cpp.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_ros_occupancy_map_monitor.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_exceptions.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_background_processing.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematics_base.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_model.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_transforms.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_state.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_robot_trajectory.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_interface.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_detection.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_detection_fcl.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_detection_bullet.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematic_constraints.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_scene.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_constraint_samplers.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_planning_request_adapter.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_profiler.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_python_tools.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_trajectory_processing.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_distance_field.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_collision_distance_field.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_kinematics_metrics.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_dynamics_solver.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_utils.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmoveit_test_utils.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/x86_64-linux-gnu/libfcl.so.0.6.1
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libccd.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libm.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liboctomap.so.1.9.7
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libBulletSoftBody.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libBulletCollision.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libLinearMath.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libkdl_parser.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liburdf.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole_bridge.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libsrdfdom.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libgeometric_shapes.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liboctomap.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/liboctomath.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librandom_numbers.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libclass_loader.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libPocoFoundation.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libroslib.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librospack.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf_conversions.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libkdl_conversions.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/liborocos-kdl.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf2_ros.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libactionlib.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libmessage_filters.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libroscpp.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libtf2.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/librostime.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /opt/ros/noetic/lib/libcpp_common.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: /home/x/Cobots-A/catkin_ws/devel/lib/libur10_kin.so
+/home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so: universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/x/Cobots-A/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so"
+	cd /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_kinematics && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ur10_moveit_plugin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/build: /home/x/catkin_ws/devel/lib/libur10_moveit_plugin.so
+universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/build: /home/x/Cobots-A/catkin_ws/devel/lib/libur10_moveit_plugin.so
 
 .PHONY : universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/build
 
 universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/clean:
-	cd /home/x/catkin_ws/build/universal_robot/ur_kinematics && $(CMAKE_COMMAND) -P CMakeFiles/ur10_moveit_plugin.dir/cmake_clean.cmake
+	cd /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_kinematics && $(CMAKE_COMMAND) -P CMakeFiles/ur10_moveit_plugin.dir/cmake_clean.cmake
 .PHONY : universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/clean
 
 universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/depend:
-	cd /home/x/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/x/catkin_ws/src /home/x/catkin_ws/src/universal_robot/ur_kinematics /home/x/catkin_ws/build /home/x/catkin_ws/build/universal_robot/ur_kinematics /home/x/catkin_ws/build/universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/x/Cobots-A/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/x/Cobots-A/catkin_ws/src /home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics /home/x/Cobots-A/catkin_ws/build /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_kinematics /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : universal_robot/ur_kinematics/CMakeFiles/ur10_moveit_plugin.dir/depend
 

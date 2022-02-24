@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/x/catkin_ws/src/universal_robot/ur_kinematics/include/ur_kinematics/ikfast.h
+/home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics/include/ur_kinematics/ikfast.h
 vector
 -
 list
@@ -14,9 +14,9 @@ list
 stdexcept
 -
 
-/home/x/catkin_ws/src/universal_robot/ur_kinematics/include/ur_kinematics/ur_kin.h
+/home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics/include/ur_kinematics/ur_kin.h
 
-/home/x/catkin_ws/src/universal_robot/ur_kinematics/src/ur_kin.cpp
+/home/x/Cobots-A/catkin_ws/src/universal_robot/ur_kinematics/src/ur_kin.cpp
 ur_kinematics/ur_kin.h
 -
 math.h

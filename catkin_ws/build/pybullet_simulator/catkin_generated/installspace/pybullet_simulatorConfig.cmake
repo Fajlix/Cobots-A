@@ -67,14 +67,14 @@ set(pybullet_simulator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(pybullet_simulator_SOURCE_PREFIX /home/x/catkin_ws/src/pybullet_simulator)
-  set(pybullet_simulator_DEVEL_PREFIX /home/x/catkin_ws/devel)
+  set(pybullet_simulator_SOURCE_PREFIX /home/x/Cobots-A/catkin_ws/src/pybullet_simulator)
+  set(pybullet_simulator_DEVEL_PREFIX /home/x/Cobots-A/catkin_ws/devel)
   set(pybullet_simulator_INSTALL_PREFIX "")
   set(pybullet_simulator_PREFIX ${pybullet_simulator_DEVEL_PREFIX})
 else()
   set(pybullet_simulator_SOURCE_PREFIX "")
   set(pybullet_simulator_DEVEL_PREFIX "")
-  set(pybullet_simulator_INSTALL_PREFIX /home/x/catkin_ws/install)
+  set(pybullet_simulator_INSTALL_PREFIX /home/x/Cobots-A/catkin_ws/install)
   set(pybullet_simulator_PREFIX ${pybullet_simulator_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/x/catkin_ws/install/lib;/home/x/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/x/Cobots-A/catkin_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

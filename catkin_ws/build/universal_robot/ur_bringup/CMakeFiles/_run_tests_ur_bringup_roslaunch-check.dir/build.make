@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/x/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/x/Cobots-A/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/x/catkin_ws/build
+CMAKE_BINARY_DIR = /home/x/Cobots-A/catkin_ws/build
 
 # Utility rule file for _run_tests_ur_bringup_roslaunch-check.
 
@@ -63,10 +63,10 @@ universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/
 .PHONY : universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/build
 
 universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/clean:
-	cd /home/x/catkin_ws/build/universal_robot/ur_bringup && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/cmake_clean.cmake
+	cd /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_bringup && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/cmake_clean.cmake
 .PHONY : universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/clean
 
 universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/depend:
-	cd /home/x/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/x/catkin_ws/src /home/x/catkin_ws/src/universal_robot/ur_bringup /home/x/catkin_ws/build /home/x/catkin_ws/build/universal_robot/ur_bringup /home/x/catkin_ws/build/universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/x/Cobots-A/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/x/Cobots-A/catkin_ws/src /home/x/Cobots-A/catkin_ws/src/universal_robot/ur_bringup /home/x/Cobots-A/catkin_ws/build /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_bringup /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : universal_robot/ur_bringup/CMakeFiles/_run_tests_ur_bringup_roslaunch-check.dir/depend
 

@@ -1,4 +1,4 @@
-prefix=/home/x/catkin_ws/install
+prefix=/home/x/Cobots-A/catkin_ws/install
 
 Name: ur10_moveit_config
 Description: Description of ur10_moveit_config

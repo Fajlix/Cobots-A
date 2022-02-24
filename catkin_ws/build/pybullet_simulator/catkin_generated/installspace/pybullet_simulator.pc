@@ -1,4 +1,4 @@
-prefix=/home/x/catkin_ws/install
+prefix=/home/x/Cobots-A/catkin_ws/install
 
 Name: pybullet_simulator
 Description: Description of pybullet_simulator

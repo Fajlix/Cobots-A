@@ -5,6 +5,7 @@ import numpy as np
 import pybullet
 import os
 import yaml
+import time
 
 from gazebo_ros.gazebo_interface import GetModelStateResponse
 from rosgraph_msgs.msg import Clock
@@ -35,11 +36,13 @@ if __name__ == '__main__':
 
     # ur10 arm
     ur10_urdf_path = os.path.join(pkg_path, 'robots/ur_description/urdf/ur10_robot.urdf')
-    robot = Manipulator.loadFromURDF(urdf_path=ur10_urdf_path)
+    ur10_config_path = os.path.join(pkg_path, 'robots/ur_description/cfg/ur_10.yaml')
+    robot = Manipulator.loadFromURDF(urdf_path=ur10_urdf_path, config_path = ur10_config_path)
     print('robot id:{}, type:{}'.format(robot.id, type(robot.id)))
 
 
-    #robot.goHome(0.2)
+
+    robot.goHome(0.2)
 
     from gazebo_msgs.msg import ModelState
     from gazebo_ros.gazebo_interface import GetModelState

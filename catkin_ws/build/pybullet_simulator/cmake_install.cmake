@@ -1,8 +1,8 @@
-# Install script for directory: /home/x/catkin_ws/src/pybullet_simulator
+# Install script for directory: /home/x/Cobots-A/catkin_ws/src/pybullet_simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/x/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/x/Cobots-A/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,33 +38,33 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/x/catkin_ws/build/pybullet_simulator/catkin_generated/installspace/pybullet_simulator.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/x/Cobots-A/catkin_ws/build/pybullet_simulator/catkin_generated/installspace/pybullet_simulator.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pybullet_simulator/cmake" TYPE FILE FILES
-    "/home/x/catkin_ws/build/pybullet_simulator/catkin_generated/installspace/pybullet_simulatorConfig.cmake"
-    "/home/x/catkin_ws/build/pybullet_simulator/catkin_generated/installspace/pybullet_simulatorConfig-version.cmake"
+    "/home/x/Cobots-A/catkin_ws/build/pybullet_simulator/catkin_generated/installspace/pybullet_simulatorConfig.cmake"
+    "/home/x/Cobots-A/catkin_ws/build/pybullet_simulator/catkin_generated/installspace/pybullet_simulatorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pybullet_simulator" TYPE FILE FILES "/home/x/catkin_ws/src/pybullet_simulator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pybullet_simulator" TYPE FILE FILES "/home/x/Cobots-A/catkin_ws/src/pybullet_simulator/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pybullet_simulator" TYPE DIRECTORY FILES
-    "/home/x/catkin_ws/src/pybullet_simulator/config"
-    "/home/x/catkin_ws/src/pybullet_simulator/launch"
-    "/home/x/catkin_ws/src/pybullet_simulator/robots"
+    "/home/x/Cobots-A/catkin_ws/src/pybullet_simulator/config"
+    "/home/x/Cobots-A/catkin_ws/src/pybullet_simulator/launch"
+    "/home/x/Cobots-A/catkin_ws/src/pybullet_simulator/robots"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pybullet_simulator" TYPE PROGRAM FILES
-    "/home/x/catkin_ws/src/pybullet_simulator/scripts/load_env_ros.py"
-    "/home/x/catkin_ws/src/pybullet_simulator/scripts/pybullet_env.py"
-    "/home/x/catkin_ws/src/pybullet_simulator/scripts/ros_interface.py"
+    "/home/x/Cobots-A/catkin_ws/src/pybullet_simulator/scripts/load_env_ros.py"
+    "/home/x/Cobots-A/catkin_ws/src/pybullet_simulator/scripts/pybullet_env.py"
+    "/home/x/Cobots-A/catkin_ws/src/pybullet_simulator/scripts/ros_interface.py"
     )
 endif()
 

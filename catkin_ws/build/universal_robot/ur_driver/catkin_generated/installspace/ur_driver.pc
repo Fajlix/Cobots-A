@@ -1,4 +1,4 @@
-prefix=/home/x/catkin_ws/install
+prefix=/home/x/Cobots-A/catkin_ws/install
 
 Name: ur_driver
 Description: Description of ur_driver

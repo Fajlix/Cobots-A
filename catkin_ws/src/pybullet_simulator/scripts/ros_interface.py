@@ -90,7 +90,7 @@ if __name__ == '__main__':
     rospack = rospkg.RosPack()
     pkg_path = rospack.get_path('pybullet_simulator')
     # get robot
-    panda_config_path = pkg_path + '/robots/franka/config/panda_arm_hand.yaml'
+    panda_config_path = pkg_path + '/robots/ur_description/cfg/ur_10.yaml'
 
     # Wait until robot is loaded in pybullet
     robot_loaded_flag = False

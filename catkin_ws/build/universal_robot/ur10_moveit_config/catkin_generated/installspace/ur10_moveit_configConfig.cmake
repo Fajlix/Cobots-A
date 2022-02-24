@@ -67,14 +67,14 @@ set(ur10_moveit_config_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(ur10_moveit_config_SOURCE_PREFIX /home/x/catkin_ws/src/universal_robot/ur10_moveit_config)
-  set(ur10_moveit_config_DEVEL_PREFIX /home/x/catkin_ws/devel)
+  set(ur10_moveit_config_SOURCE_PREFIX /home/x/Cobots-A/catkin_ws/src/universal_robot/ur10_moveit_config)
+  set(ur10_moveit_config_DEVEL_PREFIX /home/x/Cobots-A/catkin_ws/devel)
   set(ur10_moveit_config_INSTALL_PREFIX "")
   set(ur10_moveit_config_PREFIX ${ur10_moveit_config_DEVEL_PREFIX})
 else()
   set(ur10_moveit_config_SOURCE_PREFIX "")
   set(ur10_moveit_config_DEVEL_PREFIX "")
-  set(ur10_moveit_config_INSTALL_PREFIX /home/x/catkin_ws/install)
+  set(ur10_moveit_config_INSTALL_PREFIX /home/x/Cobots-A/catkin_ws/install)
   set(ur10_moveit_config_PREFIX ${ur10_moveit_config_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/x/catkin_ws/install/lib;/home/x/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/x/Cobots-A/catkin_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

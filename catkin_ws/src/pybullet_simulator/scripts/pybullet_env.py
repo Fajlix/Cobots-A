@@ -184,6 +184,7 @@ class SimEnv:
 
 
     def loadURDF(self, fileName, basePosition, baseRPY, useFixedBase, globalScaling=1.0):
+        print("-------------------------------")
         modelID = pybullet.loadURDF(fileName=fileName,
                                     basePosition=basePosition,
                                     baseOrientation=pybullet.getQuaternionFromEuler(baseRPY),
@@ -405,14 +406,13 @@ class SimRobot:
 
 
     @classmethod
-    def loadFromURDF(cls, urdf_path, verbose=True):
-        #cls.config = cls.loadYaml(config_path)
-        #cls.id = pybullet.loadURDF(fileName=urdf_path,
-        #                            basePosition=cls.config['base_position'],
-        #                            baseOrientation=pybullet.getQuaternionFromEuler(cls.config['base_rpy']),
-        #                            useFixedBase=cls.config['fixed_base'],
-        #                            flags=pybullet.URDF_USE_INERTIA_FROM_FILE)
-        cls.id = pybullet.loadURDF(urdf_path)
+    def loadFromURDF(cls, urdf_path, config_path, verbose=True):
+        cls.config = cls.loadYaml(config_path)
+        cls.id = pybullet.loadURDF(fileName=urdf_path,
+                                    basePosition=cls.config['base_position'],
+                                    baseOrientation=pybullet.getQuaternionFromEuler(cls.config['base_rpy']),
+                                    useFixedBase=cls.config['fixed_base'],
+                                    flags=pybullet.URDF_USE_INERTIA_FROM_FILE)
         return cls(verbose=verbose)
 
     @classmethod
@@ -746,16 +746,16 @@ class Manipulator(SimRobot):
         SimRobot.__init__(self, verbose)
 
         self.dt = 0.001
-        #self.arm_joint_names = self.config['arm_joint_names']
-        #self.arm_link_names = self.config['arm_link_names']
+        self.arm_joint_names = self.config['arm_joint_names']
+        self.arm_link_names = self.config['arm_link_names']
         #self.gripper_joint_names = self.config['gripper_joint_names']
         #self.joint_max_forces = self.config['joint_max_forces']
         #self.gripper_link_names = self.config['gripper_link_names']
         #self.tool_frame_name = self.config['tool_frame_name']
         #self.joint_names = self.arm_joint_names + self.gripper_joint_names
-        #self.arm_home_config = self.config['arm_home_config']
+        self.arm_home_config = self.config['arm_home_config']
         #self.gripper_home_config = self.config['gripper_home_config']
-        #self.arm_home_joint_positions = [self.arm_home_config[joint_name] for joint_name in self.arm_joint_names]
+        self.arm_home_joint_positions = [self.arm_home_config[joint_name] for joint_name in self.arm_joint_names]
         #self.gripper_home_joint_positions = [self.gripper_home_config[joint_name] for joint_name in self.gripper_joint_names]
         #self.home_joint_positions = self.arm_home_joint_positions + self.gripper_home_joint_positions
 

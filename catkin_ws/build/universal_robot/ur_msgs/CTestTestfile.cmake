@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/x/catkin_ws/src/universal_robot/ur_msgs
-# Build directory: /home/x/catkin_ws/build/universal_robot/ur_msgs
+# Source directory: /home/x/Cobots-A/catkin_ws/src/universal_robot/ur_msgs
+# Build directory: /home/x/Cobots-A/catkin_ws/build/universal_robot/ur_msgs
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

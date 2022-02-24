@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/x/catkin_ws/devel/include/ur_driver/URDriverConfig.h"
-  "/home/x/catkin_ws/devel/lib/python3/dist-packages/ur_driver/cfg/URDriverConfig.py"
-  "/home/x/catkin_ws/devel/share/ur_driver/docs/URDriverConfig-usage.dox"
-  "/home/x/catkin_ws/devel/share/ur_driver/docs/URDriverConfig.dox"
-  "/home/x/catkin_ws/devel/share/ur_driver/docs/URDriverConfig.wikidoc"
+  "/home/x/Cobots-A/catkin_ws/devel/include/ur_driver/URDriverConfig.h"
+  "/home/x/Cobots-A/catkin_ws/devel/lib/python3/dist-packages/ur_driver/cfg/URDriverConfig.py"
+  "/home/x/Cobots-A/catkin_ws/devel/share/ur_driver/docs/URDriverConfig-usage.dox"
+  "/home/x/Cobots-A/catkin_ws/devel/share/ur_driver/docs/URDriverConfig.dox"
+  "/home/x/Cobots-A/catkin_ws/devel/share/ur_driver/docs/URDriverConfig.wikidoc"
   "CMakeFiles/ur_driver_gencfg"
 )
 
