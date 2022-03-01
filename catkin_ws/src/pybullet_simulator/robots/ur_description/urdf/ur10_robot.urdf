@@ -29,6 +29,8 @@
   Contributers: Jimmy Da Silva, Ajit Krisshna N L, Muhammad Asif Rana
 -->
   <!-- measured from model -->
+  <link name="world"/>
+
   <link name="base_link">
     <visual>
       <geometry>
@@ -49,6 +51,11 @@
       <inertia ixx="0.0061063308908" ixy="0.0" ixz="0.0" iyy="0.0061063308908" iyz="0.0" izz="0.01125"/>
     </inertial>
   </link>
+    <joint name ="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.5" rpy= "0.0 0.0 0.0"/>
+  </joint>
   <joint name="shoulder_pan_joint" type="revolute">
     <parent link="base_link"/>
     <child link="shoulder_link"/>
@@ -323,11 +330,6 @@
     <parent link="wrist_3_link"/>
     <child link="tool0"/>
   </joint>
-  <link name="world"/>
-  <joint name="world_joint" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-  </joint>
+
 </robot>
 

@@ -6,5 +6,5 @@
   </node>
   
   <node pkg="pybullet_simulator" type="ros_interface.py" name="ros_interface" respawn="false" output="screen" />
-  <include file="$(find pybullet_simulator)/robots/ur_description/launch/ur10_upload.launch"/>
+  <include file="$(find pybullet_simulator)/launch/ur10_upload.launch"/>
 </launch>

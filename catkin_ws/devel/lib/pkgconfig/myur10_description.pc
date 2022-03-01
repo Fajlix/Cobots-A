@@ -1,0 +1,8 @@
+prefix=/home/x/Cobots-A/catkin_ws/devel
+
+Name: myur10_description
+Description: Description of myur10_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

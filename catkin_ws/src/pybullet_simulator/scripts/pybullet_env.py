@@ -749,7 +749,7 @@ class Manipulator(SimRobot):
         self.arm_joint_names = self.config['arm_joint_names']
         self.arm_link_names = self.config['arm_link_names']
         #self.gripper_joint_names = self.config['gripper_joint_names']
-        #self.joint_max_forces = self.config['joint_max_forces']
+        self.joint_max_forces = self.config['joint_max_forces']
         #self.gripper_link_names = self.config['gripper_link_names']
         #self.tool_frame_name = self.config['tool_frame_name']
         #self.joint_names = self.arm_joint_names + self.gripper_joint_names
@@ -771,7 +771,7 @@ class Manipulator(SimRobot):
             pybullet.changeDynamics(bodyUniqueId=self.id, linkIndex=self.getLinkIndex(gripper_link_name), lateralFriction=lateralFriction, spinningFriction=spinningFriction, rollingFriction=rollingFriction,  frictionAnchor=frictionAnchor)
 
     def getMoveJointNames(self):
-        return self.gripper_joint_names + self.arm_joint_names
+        return  self.arm_joint_names #+ self.gripper_joint_names
 
     def getGripperJointNames(self):
         return self.gripper_joint_names
@@ -790,12 +790,12 @@ class Manipulator(SimRobot):
 
     def getMoveJointPositions(self):
         actuated_joint_name_positions = self.getActuatedJointNamePositions()
-        move_joint_positions = [actuated_joint_name_positions[joint_name] for joint_name in (self.gripper_joint_names + self.arm_joint_names)]
+        move_joint_positions = [actuated_joint_name_positions[joint_name] for joint_name in (self.arm_joint_names )] #+ self.gripper_joint_names
         return move_joint_positions
 
     def getMoveJointVelocities(self):
         actuated_joint_name_velocities = self.getActuatedJointNameVelocities()
-        move_joint_velocities = [actuated_joint_name_velocities[joint_name] for joint_name in (self.gripper_joint_names + self.arm_joint_names)]
+        move_joint_velocities = [actuated_joint_name_velocities[joint_name] for joint_name in (self.arm_joint_names)] #+ self.gripper_joint_names
         return move_joint_velocities
 
     def getArmJointStateMsg(self):
