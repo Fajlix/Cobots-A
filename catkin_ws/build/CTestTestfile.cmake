@@ -7,6 +7,7 @@
 subdirs("gtest")
 subdirs("myur10_description")
 subdirs("myur10_moveit_config")
+subdirs("ocrtoc_materials")
 subdirs("pybullet_simulator")
 subdirs("universal_robot/universal_robot")
 subdirs("universal_robot/universal_robots")

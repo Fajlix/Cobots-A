@@ -4,30 +4,25 @@
     <joint name ="world_link" type="fixed">
       <parent link="world"/>
       <child link="table"/>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.42 0.0 -0.39" rpy="0.0 0.0 0.0"/>
     </joint>
-    <link name="table">
-      <inertial>
-        <origin xyz="0 0 0.5" rpy= "0 0 0"/>
-        <mass value= "20"/>
-        <inertia ixx = "200" ixy = "200" ixz = "200" iyy = "200" iyz = "200" izz = "200"/>
-      </inertial>
-      <visual> 
-        <origin xyz="0 0 0.5" rpy= "0 0 0"/>
-        <geometry>
-          <cylinder radius="0.1" length="1"/>
-        </geometry>
-        <material name= "gray">
-          <color rgba="0.5 0.5 0.5 0"/>
-        </material>
-      </visual>
-      <collision>
-	<origin xyz="0 0 0.5" rpy= "0 0 0"/>
-        <geometry>
-          <cylinder radius="0.1" length="1"/>
-        </geometry>
-      </collision>
-    </link>
+      <material name="grey">
+    <color rgba="0.8 0.8 0.8 1"/>
+  </material>
+
+  <link name="table">
+    <visual>
+      <geometry>
+        <mesh filename="$(find myur10_description)/meshes/table/visual/table.dae"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="$(find myur10_description)/meshes/table/collision/table.obj"/>
+      </geometry>
+    </collision>
+  </link>
     <xacro:arg name = "transmission_hw_interface" default = "hardware_interface/PositionJointInterface"/>
     
     <xacro:include filename = "$(find ur_description)/urdf/common.gazebo.xacro"/>
@@ -39,6 +34,6 @@
     <joint name="base_joint" type="fixed">
       <parent link="world"/>
       <child link="base_link"/>
-      <origin xyz ="0 0 1" rpy="0.0 0.0 0.0"/>
+      <origin xyz ="0 0 0" rpy="0.0 0.0 0.0"/>
     </joint>
 </robot>

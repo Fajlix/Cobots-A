@@ -56,6 +56,7 @@ CMAKE_BINARY_DIR = /home/x/Cobots-A/catkin_ws/build
 all: gtest/all
 all: myur10_description/all
 all: myur10_moveit_config/all
+all: ocrtoc_materials/all
 all: pybullet_simulator/all
 all: universal_robot/universal_robot/all
 all: universal_robot/universal_robots/all
@@ -80,6 +81,7 @@ all: universal_robot/ur5_moveit_config/all
 preinstall: gtest/preinstall
 preinstall: myur10_description/preinstall
 preinstall: myur10_moveit_config/preinstall
+preinstall: ocrtoc_materials/preinstall
 preinstall: pybullet_simulator/preinstall
 preinstall: universal_robot/universal_robot/preinstall
 preinstall: universal_robot/universal_robots/preinstall
@@ -109,6 +111,7 @@ clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: myur10_description/clean
 clean: myur10_moveit_config/clean
+clean: ocrtoc_materials/clean
 clean: pybullet_simulator/clean
 clean: universal_robot/universal_robot/clean
 clean: universal_robot/universal_robots/clean
@@ -221,6 +224,24 @@ myur10_moveit_config/preinstall:
 myur10_moveit_config/clean:
 
 .PHONY : myur10_moveit_config/clean
+
+#=============================================================================
+# Directory level rules for directory ocrtoc_materials
+
+# Recursive "all" directory target.
+ocrtoc_materials/all:
+
+.PHONY : ocrtoc_materials/all
+
+# Recursive "preinstall" directory target.
+ocrtoc_materials/preinstall:
+
+.PHONY : ocrtoc_materials/preinstall
+
+# Recursive "clean" directory target.
+ocrtoc_materials/clean:
+
+.PHONY : ocrtoc_materials/clean
 
 #=============================================================================
 # Directory level rules for directory pybullet_simulator

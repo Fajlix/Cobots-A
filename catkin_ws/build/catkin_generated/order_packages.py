@@ -2,4 +2,4 @@
 source_root_dir = '/home/x/Cobots-A/catkin_ws/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/opt/ros/noetic'.split(';') if '/opt/ros/noetic' != '' else []
+underlay_workspaces = '/home/x/Cobots-A/catkin_ws/devel;/opt/ros/noetic'.split(';') if '/home/x/Cobots-A/catkin_ws/devel;/opt/ros/noetic' != '' else []

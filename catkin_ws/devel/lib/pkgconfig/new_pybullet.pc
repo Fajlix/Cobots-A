@@ -1,8 +1,0 @@
-prefix=/home/x/Cobots-A/catkin_ws/devel
-
-Name: new_pybullet
-Description: Description of new_pybullet
-Version: 0.3.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

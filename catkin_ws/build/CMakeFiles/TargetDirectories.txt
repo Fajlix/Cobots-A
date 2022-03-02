@@ -50,6 +50,13 @@
 /home/x/Cobots-A/catkin_ws/build/myur10_moveit_config/CMakeFiles/rebuild_cache.dir
 /home/x/Cobots-A/catkin_ws/build/myur10_moveit_config/CMakeFiles/edit_cache.dir
 /home/x/Cobots-A/catkin_ws/build/myur10_moveit_config/CMakeFiles/test.dir
+/home/x/Cobots-A/catkin_ws/build/ocrtoc_materials/CMakeFiles/install/strip.dir
+/home/x/Cobots-A/catkin_ws/build/ocrtoc_materials/CMakeFiles/install/local.dir
+/home/x/Cobots-A/catkin_ws/build/ocrtoc_materials/CMakeFiles/install.dir
+/home/x/Cobots-A/catkin_ws/build/ocrtoc_materials/CMakeFiles/list_install_components.dir
+/home/x/Cobots-A/catkin_ws/build/ocrtoc_materials/CMakeFiles/rebuild_cache.dir
+/home/x/Cobots-A/catkin_ws/build/ocrtoc_materials/CMakeFiles/edit_cache.dir
+/home/x/Cobots-A/catkin_ws/build/ocrtoc_materials/CMakeFiles/test.dir
 /home/x/Cobots-A/catkin_ws/build/pybullet_simulator/CMakeFiles/install/strip.dir
 /home/x/Cobots-A/catkin_ws/build/pybullet_simulator/CMakeFiles/install/local.dir
 /home/x/Cobots-A/catkin_ws/build/pybullet_simulator/CMakeFiles/install.dir
