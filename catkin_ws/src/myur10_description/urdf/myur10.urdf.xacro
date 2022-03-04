@@ -13,13 +13,13 @@
   <link name="table">
     <visual>
       <geometry>
-        <mesh filename="$(find myur10_description)/meshes/table/visual/table.dae"/>
+        <mesh filename="package://myur10_description/meshes/table/visual/table.dae"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="$(find myur10_description)/meshes/table/collision/table.obj"/>
+        <mesh filename="package://myur10_description/meshes/table/collision/table.obj"/>
       </geometry>
     </collision>
   </link>

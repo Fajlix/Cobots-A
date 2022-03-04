@@ -1,8 +1,0 @@
-prefix=/home/x/Cobots-A/catkin_ws/devel
-
-Name: ocrtoc_materials
-Description: Description of ocrtoc_materials
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
