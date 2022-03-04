@@ -1,3 +1,0 @@
-{
-    "cmake.sourceDirectory": "${workspaceFolder}/catkin_ws/src/pybullet_simulator"
-}
