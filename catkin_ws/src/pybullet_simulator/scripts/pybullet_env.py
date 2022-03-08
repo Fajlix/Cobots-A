@@ -814,7 +814,7 @@ class Manipulator(SimRobot):
         # jointTrajectory = CubicSpline(x=np.array(times), y=np.array(values), axis=0, bc_type=((1, np.zeros_like(values[0])), (1, np.zeros_like(values[-1]))))
         # # inter1d
         print(f'These are the values: {values} and times {times}')
-        jointTrajectory = interp1d(x=np.array(times), y=np.array(values, dtype=object), axis=0, fill_value=(values[0], values[-1]), bounds_error=False)
+        jointTrajectory = interp1d(x=np.array(times), y=np.array(values), axis=0, fill_value=(values[0], values[-1]), bounds_error=False)
         return jointTrajectory
 
     def get_current_joint_position(self):
@@ -914,7 +914,6 @@ class Manipulator(SimRobot):
         gripper_joint_config = {gripper_main_control_joint_name: gripper_main_control_joint_angle}
         for i in range(len(mimic_joint_names)):
             gripper_joint_config[mimic_joint_names[i]] = gripper_main_control_joint_angle * mimic_multiplier[i]
-
         gripper_joint_pos = [gripper_joint_config[joint_name] for joint_name in self.gripper_joint_names]
         return gripper_joint_pos
 
@@ -924,7 +923,8 @@ class Manipulator(SimRobot):
         return gripper_opening_length
 
     def pandaGripperIK(self, gripper_opening_length):
-        gripper_joint_pos = [gripper_opening_length/2, gripper_opening_length/2]
+        
+        gripper_joint_pos = [gripper_opening_length/2, -gripper_opening_length/2, -gripper_opening_length/2, gripper_opening_length/2]
         return gripper_joint_pos
 
     def pandaGripperFK(self, gripper_joint_pos):
@@ -932,8 +932,9 @@ class Manipulator(SimRobot):
         return gripper_opening_length
 
     def gripperControl(self, gripper_opening_length, T=1.0):
-        des_gripper_pos = [gripper_opening_length/2]
+        des_gripper_pos = self.pandaGripperIK(gripper_opening_length)
         cur_gripper_pos = self.get_current_gripper_joint_position()
+        print(cur_gripper_pos)
         gripper_joint_trajectory = self.generateJointTrajectory(times=[0, T], values=[cur_gripper_pos, des_gripper_pos])
 
         # move

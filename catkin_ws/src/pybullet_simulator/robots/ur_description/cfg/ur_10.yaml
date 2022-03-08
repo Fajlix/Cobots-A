@@ -40,8 +40,14 @@ fixed_base: 1
 
 gripper_home_config:
   gripper_joint: 0
+  r_finger_1_joint: 0
+  r_finger_passive_joint: 0
+  l_finger_passive_joint: 0
 gripper_joint_names:
 - gripper_joint
+- r_finger_1_joint
+- r_finger_passive_joint
+- l_finger_passive_joint
 gripper_link_names:
 - hand_link
 - l_finger_link
