@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="rg2myur10">
+    <link name="world"/>
+    <joint name ="world_link" type="fixed">
+      <parent link="world"/>
+      <child link="table"/>
+      <origin xyz="0.42 0.0 -0.39" rpy="0.0 0.0 0.0"/>
+    </joint>
+      <material name="grey">
+    <color rgba="0.8 0.8 0.8 1"/>
+  </material>
+
+  <link name="table">
+    <visual>
+      <geometry>
+        <mesh filename="package://myur10_description/meshes/table/visual/table.dae"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://myur10_description/meshes/table/collision/table.obj"/>
+      </geometry>
+    </collision>
+  </link>
+    <xacro:arg name = "transmission_hw_interface" default = "hardware_interface/PositionJointInterface"/>
+    
+    <xacro:include filename = "$(find ur_description)/urdf/common.gazebo.xacro"/>
+    
+    <xacro:include filename = "$(find ur_description)/urdf/ur10.urdf.xacro"/>
+    
+    <xacro:include filename = "$(find rg2_description)/urdf/rg2.urdf.xacro"/>
+    
+    <xacro:ur10_robot prefix="" joint_limited="true" transmission_hw_interface= "$(arg transmission_hw_interface)"/>
+    
+    <joint name="ee_rg2_fixed_joint" type="fixed">
+      <parent link="tool0"/>
+        <child link="rg2_base_link"/>
+      <origin xyz="0 0 0.004" rpy="0 ${-pi/2.0} 0"/>
+    </joint>
+    
+    
+    <joint name="base_joint" type="fixed">
+      <parent link="world"/>
+      <child link="base_link"/>
+      <origin xyz ="0 0 0" rpy="0.0 0.0 0.0"/>
+    </joint>
+</robot>

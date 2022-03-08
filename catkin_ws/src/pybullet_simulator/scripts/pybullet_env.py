@@ -748,20 +748,20 @@ class Manipulator(SimRobot):
         self.dt = 0.001
         self.arm_joint_names = self.config['arm_joint_names']
         self.arm_link_names = self.config['arm_link_names']
-        #self.gripper_joint_names = self.config['gripper_joint_names']
+        self.gripper_joint_names = self.config['gripper_joint_names']
         self.joint_max_forces = self.config['joint_max_forces']
-        #self.gripper_link_names = self.config['gripper_link_names']
-        #self.tool_frame_name = self.config['tool_frame_name']
-        #self.joint_names = self.arm_joint_names + self.gripper_joint_names
+        self.gripper_link_names = self.config['gripper_link_names']
+        self.tool_frame_name = self.config['tool_frame_name']
+        self.joint_names = self.arm_joint_names + self.gripper_joint_names
         self.arm_home_config = self.config['arm_home_config']
-        #self.gripper_home_config = self.config['gripper_home_config']
+        self.gripper_home_config = self.config['gripper_home_config']
         self.arm_home_joint_positions = [self.arm_home_config[joint_name] for joint_name in self.arm_joint_names]
-        #self.gripper_home_joint_positions = [self.gripper_home_config[joint_name] for joint_name in self.gripper_joint_names]
-        #self.home_joint_positions = self.arm_home_joint_positions + self.gripper_home_joint_positions
+        self.gripper_home_joint_positions = [self.gripper_home_config[joint_name] for joint_name in self.gripper_joint_names]
+        self.home_joint_positions = self.arm_home_joint_positions + self.gripper_home_joint_positions
 
         self.tf_broadcaster_initialized = False
 
-        #self.changeGripperDynamics(lateralFriction=1, spinningFriction=0.8, rollingFriction=0.0, frictionAnchor=True)
+        self.changeGripperDynamics(lateralFriction=1, spinningFriction=0.8, rollingFriction=0.0, frictionAnchor=True)
 
         # self.realsense = Camera()
 
@@ -771,7 +771,7 @@ class Manipulator(SimRobot):
             pybullet.changeDynamics(bodyUniqueId=self.id, linkIndex=self.getLinkIndex(gripper_link_name), lateralFriction=lateralFriction, spinningFriction=spinningFriction, rollingFriction=rollingFriction,  frictionAnchor=frictionAnchor)
 
     def getMoveJointNames(self):
-        return  self.arm_joint_names #+ self.gripper_joint_names
+        return  self.arm_joint_names + self.gripper_joint_names
 
     def getGripperJointNames(self):
         return self.gripper_joint_names
@@ -790,12 +790,12 @@ class Manipulator(SimRobot):
 
     def getMoveJointPositions(self):
         actuated_joint_name_positions = self.getActuatedJointNamePositions()
-        move_joint_positions = [actuated_joint_name_positions[joint_name] for joint_name in (self.arm_joint_names )] #+ self.gripper_joint_names
+        move_joint_positions = [actuated_joint_name_positions[joint_name] for joint_name in (self.arm_joint_names + self.gripper_joint_names)] 
         return move_joint_positions
 
     def getMoveJointVelocities(self):
         actuated_joint_name_velocities = self.getActuatedJointNameVelocities()
-        move_joint_velocities = [actuated_joint_name_velocities[joint_name] for joint_name in (self.arm_joint_names)] #+ self.gripper_joint_names
+        move_joint_velocities = [actuated_joint_name_velocities[joint_name] for joint_name in (self.arm_joint_names + self.gripper_joint_names)]
         return move_joint_velocities
 
     def getArmJointStateMsg(self):
@@ -813,7 +813,8 @@ class Manipulator(SimRobot):
         # CubicSpline
         # jointTrajectory = CubicSpline(x=np.array(times), y=np.array(values), axis=0, bc_type=((1, np.zeros_like(values[0])), (1, np.zeros_like(values[-1]))))
         # # inter1d
-        jointTrajectory = interp1d(x=np.array(times), y=np.array(values), axis=0, fill_value=(values[0], values[-1]), bounds_error=False)
+        print(f'These are the values: {values} and times {times}')
+        jointTrajectory = interp1d(x=np.array(times), y=np.array(values, dtype=object), axis=0, fill_value=(values[0], values[-1]), bounds_error=False)
         return jointTrajectory
 
     def get_current_joint_position(self):
@@ -931,16 +932,16 @@ class Manipulator(SimRobot):
         return gripper_opening_length
 
     def gripperControl(self, gripper_opening_length, T=1.0):
-        des_gripper_pos = self.pandaGripperIK(gripper_opening_length)
+        des_gripper_pos = [gripper_opening_length/2]
         cur_gripper_pos = self.get_current_gripper_joint_position()
         gripper_joint_trajectory = self.generateJointTrajectory(times=[0, T], values=[cur_gripper_pos, des_gripper_pos])
 
         # move
         for t in np.arange(0, T, self.dt):
             q = gripper_joint_trajectory(t)
-            # self.setJointPositions(dict(zip(self.gripper_joint_names, q)))
+            #self.setJointPositions(dict(zip(self.gripper_joint_names, q)))
             self.setJointPositionsWithPDGains(dict(zip(self.gripper_joint_names, q)), PGain=0.002, DGain=0.01)
-            # self.setJointPositionsWithForceLimit(dict(zip(self.gripper_joint_names, q)), maxForce=100)
+            #self.setJointPositionsWithForceLimit(dict(zip(self.gripper_joint_names, q)), maxForce=100)
             time.sleep(self.dt)
 
     def getGripperOpeningLength(self):

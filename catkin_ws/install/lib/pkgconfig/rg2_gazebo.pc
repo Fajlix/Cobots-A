@@ -1,0 +1,8 @@
+prefix=/home/x/Cobots-A/catkin_ws/install
+
+Name: rg2_gazebo
+Description: Description of rg2_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/x/Cobots-A/catkin_ws/install
+
+Name: ocrtoc_common
+Description: Description of ocrtoc_common
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

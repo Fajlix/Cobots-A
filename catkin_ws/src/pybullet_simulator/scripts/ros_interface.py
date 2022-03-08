@@ -111,7 +111,7 @@ if __name__ == '__main__':
     joint_state_publisher_1 = rospy.Publisher('/joint_states', JointState, queue_size=10)
 
     arm_control_action_server = ArmControlAction('/position_joint_trajectory_controller/follow_joint_trajectory')
-    #gripper_control_action_server = GripperControlAction('/franka_gripper/gripper_action')
+    gripper_control_action_server = GripperControlAction('/gripper_controller/gripper_action')
 
     rate = rospy.Rate(5)
     robot.showRobotInfo()

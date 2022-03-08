@@ -35,7 +35,7 @@ if __name__ == '__main__':
     sim_env.resetLightPosition(lightPosition=[1,0,1])
 
     # ur10 arm
-    ur10_urdf_path = os.path.join(pkg_path, 'robots/ur_description/urdf/myur10.urdf')
+    ur10_urdf_path = os.path.join(pkg_path, 'robots/ur_description/urdf/myrg2ur10.urdf')
     ur10_config_path = os.path.join(pkg_path, 'robots/ur_description/cfg/ur_10.yaml')
     robot = Manipulator.loadFromURDF(urdf_path=ur10_urdf_path, config_path = ur10_config_path)
     print('robot id:{}, type:{}'.format(robot.id, type(robot.id)))

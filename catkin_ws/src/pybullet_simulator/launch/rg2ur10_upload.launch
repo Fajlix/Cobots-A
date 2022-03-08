@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name = "transmission_hw_interface" default = "hardware_interface/PositionJointInterface"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find myur10_description)/urdf/myrg2ur10.urdf.xacro' transmission_hw_interface:=$(arg transmission_hw_interface)" />
+  <include file="$(find pybullet_simulator)/launch/ur10_controllers.launch"/>
+</launch>
