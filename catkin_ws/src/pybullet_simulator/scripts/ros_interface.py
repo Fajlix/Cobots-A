@@ -105,11 +105,17 @@ if __name__ == '__main__':
         robot = Manipulator.loadFromID(id = ROBOT_ID, config_path=panda_config_path)
         robot_loaded_flag = True
     rospy.loginfo('Robot loaded')
+    
+    realsense = Camera(name='realsense')
+
+    # tf
+    tf_broadcaster = tf.TransformBroadcaster()
 
     from sensor_msgs.msg import JointState, CameraInfo, Image
     joint_state_publisher = rospy.Publisher('/joint_state_controller/joint_states', JointState, queue_size=10)
     joint_state_publisher_1 = rospy.Publisher('/joint_states', JointState, queue_size=10)
-
+    
+    realsense.init_ros_publiser()
     arm_control_action_server = ArmControlAction('/position_joint_trajectory_controller/follow_joint_trajectory')
     gripper_control_action_server = GripperControlAction('/gripper_controller/gripper_action')
 
@@ -117,16 +123,17 @@ if __name__ == '__main__':
     robot.showRobotInfo()
     print("AFTER AFTER DOING STUFF ")
     #rospy.Timer(rospy.Duration(1), kinect_callback, oneshot=False)
-
     while not rospy.is_shutdown():
         # tf
         robot.broadcast_tfs()
-
         # joint state
         joint_info = robot.getArmJointStateMsg()
         joint_state_publisher.publish(joint_info)
         joint_state_publisher_1.publish(joint_info)
-
+        
+        # camera
+        realsense.updateCameraImage(robot.getRealsensePosition(), robot.getRealsenseOrientation())
+        realsense.ros_publish_image()
 
         rate.sleep()
 

@@ -573,6 +573,73 @@
     <parent link="wrist_3_link"/>
     <child link="tool0"/>
   </joint>
+  <joint name="realsense_camera_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.05 0 0.028"/>
+    <parent link="hand_link"/>
+    <child link="realsense_link"/>
+  </joint>
+
+  <link name="realsense_link">
+    <visual>
+      <!-- the mesh origin is at front plate in between the two infrared camera axes -->
+      <origin rpy="1.57079632679 0 1.57079632679" xyz="0.0 -0.0 0"/>
+      <geometry>
+        <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
+        <mesh filename="package://realsense2_description/meshes/d435.dae" />
+      </geometry>
+      <material name="DarkGrey">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 -0.0175 0"/>
+      <geometry>
+        <box size="0.02505 0.09 0.025"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <!-- The following are not reliable values, and should not be used for modeling -->
+      <mass value="0.072"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.000498940" iyz="0.0" izz="0.003879257"/>
+    </inertial>
+  </link>
+
+  <joint name="realsense_optical_joint" type="fixed">
+    <origin rpy="-1.571 0 -1.571" xyz="0.0 0.015 0.0"/>
+    <parent link="realsense_link"/>
+    <child link="realsense_color_optical_frame"/>
+  </joint>
+
+  <joint name="realsense_fake_joint" type="fixed">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.015 0.0"/>
+    <parent link="realsense_link"/>
+    <child link="realsense_camera_frame"/>
+  </joint>
+
+  <link name="realsense_camera_frame">
+    <inertial>
+      <mass value="1e-6"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <link name="realsense_color_optical_frame">
+    <inertial>
+      <mass value="1e-6"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <joint name="realsense_rgb2depth_virtual_joint" type="fixed">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <parent link="realsense_color_optical_frame"/>
+    <child link="realsense_depth_optical_frame"/>
+  </joint>
+
+  <link name="realsense_depth_optical_frame"></link>
   <joint name="ee_rg2_fixed_joint" type="fixed">
     <parent link="tool0"/>
     <child link="rg2_base_link"/>

@@ -52,7 +52,7 @@ if __name__ == '__main__':
     print(yaml_path)
     pose_dict = {}
     with open(yaml_path, "r") as f:
-        object_list = yaml.load(f)
+        object_list = yaml.load(f, yaml.FullLoader)
         for key in sorted(object_list):
             index = 1
             for pose in object_list[key]:

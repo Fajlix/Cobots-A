@@ -934,7 +934,6 @@ class Manipulator(SimRobot):
     def gripperControl(self, gripper_opening_length, T=1.0):
         des_gripper_pos = self.pandaGripperIK(gripper_opening_length)
         cur_gripper_pos = self.get_current_gripper_joint_position()
-        print(cur_gripper_pos)
         gripper_joint_trajectory = self.generateJointTrajectory(times=[0, T], values=[cur_gripper_pos, des_gripper_pos])
 
         # move
@@ -1003,6 +1002,7 @@ class Camera:
     def init_ros_publiser(self):
         import rospy
         from sensor_msgs.msg import CameraInfo, Image, PointCloud2
+        print('-*'*80)
         self.color_camera_info_publisher = rospy.Publisher('/' + self.name + '/color/camera_info', CameraInfo, queue_size=10)
         if self.name == 'realsense':
             self.color_image_raw_publisher = rospy.Publisher('/' + self.name + '/color/image_raw', Image, queue_size=10)
@@ -1013,6 +1013,7 @@ class Camera:
         self.point_cloud_raw_publisher = rospy.Publisher('/' + self.name + '/depth/points', PointCloud2, queue_size=10)
 
     def ros_publish_image(self):
+        print("new_image")
         self.color_camera_info_publisher.publish(self.getCameraInfoMsg())
         self.color_image_raw_publisher.publish(self.getCameraColorImageRawMsg())
         self.depth_image_raw_publisher.publish(self.getCameraDepthImageRawMsg())
