@@ -85,6 +85,7 @@ class ManipulatorInterface(object):
         self.move_group.set_start_state_to_current_state()
         self.move_group.set_pose_target(request.goal)
         traj = self.move_group.plan()
+        print('*'*200, traj)
         traj_len = len(traj.joint_trajectory.points)
         if traj_len < 1:
             rospy.logerr("No valid trajectory.")
