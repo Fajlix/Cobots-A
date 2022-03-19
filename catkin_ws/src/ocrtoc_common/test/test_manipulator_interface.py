@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     rospy.sleep(2.0)
     request = JointSpaceGoalRequest()
-    request.joint_goal = [1.48, -0.22 , -0.19, -2.41, -0.645, 1.51, 0.08]
+    request.joint_goal = [1.48, -0.22 , -0.19, -2.41, -0.645, 1.51, 0.0]
     print('='*80)
     print(response.joint_position_list)
     print(request.joint_goal)

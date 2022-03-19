@@ -555,7 +555,7 @@ class SimRobot:
     def getParentLinkName(self, linkIndex):
         parent_link_index = self.getParentLinkIndex(linkIndex)
         if parent_link_index == -1:
-            parent_link_name = 'panda_link0'
+            parent_link_name = 'base'
         else:
             parent_link_name = self.getLinkName(parent_link_index)
         return parent_link_name
@@ -962,7 +962,7 @@ class Manipulator(SimRobot):
             for i in range(self.getNumJoints()):
                 current_link_name = self.getLinkName(i)
                 parent_link_name = self.getParentLinkName(i)
-                if parent_link_name == 'panda_link0':
+                if parent_link_name == 'base_link':
                     tf_pre = np.dot(tf.transformations.translation_matrix(self.getBasePosition()), tf.transformations.quaternion_matrix(self.getBaseOrientation()))
                 else:
                     tf_pre = np.dot(tf.transformations.translation_matrix(self.getLinkPosition(parent_link_name)), tf.transformations.quaternion_matrix(self.getLinkOrientation(parent_link_name)))
