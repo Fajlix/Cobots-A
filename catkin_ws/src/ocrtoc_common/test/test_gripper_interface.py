@@ -4,7 +4,7 @@ import time
 
 if __name__ == '__main__':
     rospy.init_node('test_transform_interface')
-    g = GripperInterface(topic_name = '/franka_gripper/gripper_action')
+    g = GripperInterface(topic_name = '/gripper_controller/gripper_action')
 
 
     # go to specific position(distance between fingers)

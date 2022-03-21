@@ -32,4 +32,4 @@ class GripperInterface(object):
         self.go_to_position(position = 0.0, max_effort = 30, wait_time = 2.0)
 
     def open(self):
-        self.go_to_position(position = 0.078, max_effort = 30, wait_time = 2.0)
+        self.go_to_position(position = 0.35, max_effort = 30, wait_time = 2.0)

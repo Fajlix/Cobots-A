@@ -84,7 +84,7 @@ class ManipulatorInterface(object):
         print("hello"*10)
         self.move_group.set_start_state_to_current_state()
         self.move_group.set_pose_target(request.goal)
-        traj = self.move_group.plan()
+        traj_success, traj, traj_time, error_code = self.move_group.plan()
 
         print('*'*200, traj)
         traj_len = len(traj.joint_trajectory.points)
