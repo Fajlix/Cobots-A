@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="rg2myur10">
     <link name="world"/>
+    
     <joint name ="world_link" type="fixed">
       <parent link="world"/>
       <child link="table"/>
       <origin xyz="0.42 0.0 -0.39" rpy="0.0 0.0 0.0"/>
     </joint>
+    
       <material name="grey">
     <color rgba="0.8 0.8 0.8 1"/>
   </material>
@@ -36,7 +38,7 @@
     <joint name="ee_rg2_fixed_joint" type="fixed">
       <parent link="tool0"/>
         <child link="rg2_base_link"/>
-      <origin xyz="0 0 0.004" rpy="0 ${-pi/2.0} 0"/>
+      <origin xyz="0 0 0.05" rpy="0 ${-pi/2.0} 0"/>
     </joint>
     
     

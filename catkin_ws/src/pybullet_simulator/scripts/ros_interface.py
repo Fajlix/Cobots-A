@@ -86,12 +86,12 @@ if __name__ == '__main__':
         print('pybullet not connected!')
     else:
         print("connected to pybullet physics id:", physics_id)
-
+	
     rospack = rospkg.RosPack()
     pkg_path = rospack.get_path('pybullet_simulator')
     # get robot
     panda_config_path = pkg_path + '/robots/ur_description/cfg/ur_10.yaml'
-
+    print("1"*100)
     # Wait until robot is loaded in pybullet
     robot_loaded_flag = False
     while not robot_loaded_flag:
@@ -105,12 +105,12 @@ if __name__ == '__main__':
         robot = Manipulator.loadFromID(id = ROBOT_ID, config_path=panda_config_path)
         robot_loaded_flag = True
     rospy.loginfo('Robot loaded')
-    
+    print("2"*100)
     realsense = Camera(name='realsense')
 
     # tf
     tf_broadcaster = tf.TransformBroadcaster()
-
+    print("3"*100)
     from sensor_msgs.msg import JointState, CameraInfo, Image
     joint_state_publisher = rospy.Publisher('/joint_state_controller/joint_states', JointState, queue_size=10)
     joint_state_publisher_1 = rospy.Publisher('/joint_states', JointState, queue_size=10)
@@ -125,12 +125,15 @@ if __name__ == '__main__':
     #rospy.Timer(rospy.Duration(1), kinect_callback, oneshot=False)
     while not rospy.is_shutdown():
         # tf
+        print(pybullet.getConnectionInfo())
         robot.broadcast_tfs()
         # joint state
+        print("new state!")
         joint_info = robot.getArmJointStateMsg()
         joint_state_publisher.publish(joint_info)
         joint_state_publisher_1.publish(joint_info)
-        
+        print(robot.getRealsensePosition())
+        print(robot.getRealsenseOrientation())
         # camera
         realsense.updateCameraImage(robot.getRealsensePosition(), robot.getRealsenseOrientation())
         realsense.ros_publish_image()

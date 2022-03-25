@@ -32,7 +32,8 @@ if __name__ == "__main__":
     rospy.sleep(2.0)
     
     request = JointSpaceGoalRequest()
-    request.joint_goal = [1.48, -0.22 , -0.19, -2.41, -0.645, 1.51]
+    #request.joint_goal = [1.48, -0.22 , -0.19, -2.41, -0.645, 1.51]
+    request.joint_goal = [1.57070/2.25, -1.5707*0.80, 1.5707*1.25, -1.5707/2.2, -1.5707*1.5, 1.5707]
     print('='*80)
     print(response.joint_position_list)
     print(request.joint_goal)
@@ -48,11 +49,11 @@ if __name__ == "__main__":
 
     rospy.sleep(1.0)
     request = PoseGoalRequest()
-    q = quaternion_from_euler(1.5707*2, 0, -1.5707)
+    q = quaternion_from_euler(-1.5707*1.25, 0, -1.5707/2)
     # Goal in 'world' frame
-    request.goal.position.x = 0.5
-    request.goal.position.y = -0.525294298568
-    request.goal.position.z = 0.488844847508
+    request.goal.position.x = -0.25
+    request.goal.position.y = -0.625294298568
+    request.goal.position.z = 0.588844847508
     request.goal.orientation.x = q[0]
     request.goal.orientation.y = q[1]
     request.goal.orientation.z = q[2]
@@ -68,3 +69,4 @@ if __name__ == "__main__":
         print("Service call failed: %s"%e)
     print()
     print()
+

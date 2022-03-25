@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#!pip install pybullet
 from pybullet_env import SimEnv, SimRobot, Manipulator, Camera
 #from pybullet_env import Box, Cylinder
 import numpy as np
@@ -60,7 +61,7 @@ if __name__ == '__main__':
                 pose_dict[alias] = pose
                 index += 1
     f.close()
-    print(f'poses {pose_dict}')
+    #print(f'poses {pose_dict}')
 
 
     robot.goHome(0.2)
@@ -74,7 +75,7 @@ if __name__ == '__main__':
     model_id_name_map = get_model_id_name_map()
     for model_id, model_name in model_id_name_map.items():
         model_pose = pybullet.getBasePositionAndOrientation(model_id)
-        model_name = model_name.decode('UTF-8')
+        #model_name = model_name.decode()
         print(model_id, model_name, model_pose)
         if model_name in pose_dict:
             print("reset pose of " + model_name)

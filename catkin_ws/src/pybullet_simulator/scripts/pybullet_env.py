@@ -164,7 +164,7 @@ class SimEnv:
         self.real_time_sim = real_time_sim
         self.sim_count = 0
         self.sim_time = 0.0
-
+        print("THIS SHOULD NOT HAPPEN")
         if GUI is True:
             self.physics_client = pybullet.connect(pybullet.GUI_SERVER)
         else:
@@ -487,6 +487,7 @@ class SimRobot:
         return pybullet.getBodyInfo(self.id)[0].decode()
 
     def getNumJoints(self):
+        print(pybullet.getConnectionInfo())
         return pybullet.getNumJoints(self.id)
 
     def getNumActuatedJoints(self):
@@ -813,7 +814,7 @@ class Manipulator(SimRobot):
         # CubicSpline
         # jointTrajectory = CubicSpline(x=np.array(times), y=np.array(values), axis=0, bc_type=((1, np.zeros_like(values[0])), (1, np.zeros_like(values[-1]))))
         # # inter1d
-        print(f'These are the values: {values} and times {times}')
+        #print(f'These are the values: {values} and times {times}')
         jointTrajectory = interp1d(x=np.array(times), y=np.array(values), axis=0, fill_value=(values[0], values[-1]), bounds_error=False)
         return jointTrajectory
 
