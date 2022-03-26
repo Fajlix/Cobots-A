@@ -434,6 +434,7 @@ class Perceptor():
             dict, dict: object 6d poses and grasp poses.
         '''
         # Capture Data
+        print('111111111111111111111111111111111111111')
         full_pcd, color_images, camera_poses = self.capture_data()
         # Compute Grasping Poses (Many Poses in a Scene)
         gg = self.compute_grasp_pose(full_pcd)
