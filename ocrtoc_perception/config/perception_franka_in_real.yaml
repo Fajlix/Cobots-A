@@ -7,7 +7,7 @@ points_topic_name: /realsense/depth/points
 kinect_color_topic_name: /kinect/color/image_rect_color
 kinect_depth_topic_name: /kinect/depth_to_color/image_raw
 kinect_points_topic_name: /kinect/depth/points
-transform_from_frame: world
+transform_from_frame: base_link
 graspnet_checkpoint_path: src/ocrtoc_perception/graspnet/logs/log_rs/checkpoint.tar
 both_camera_fix_pose_file: config/arm_poses_Franka_realsense.csv
 realsense_camera_fix_pose_file: config/arm_poses_Franka_realsense.csv
@@ -86,4 +86,4 @@ response:
     angle_thresh: 20
     mask_thresh: 0.5
 
-debug: False
+debug: True

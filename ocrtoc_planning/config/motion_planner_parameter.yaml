@@ -20,9 +20,9 @@ via_pose_ox: 0
 via_pose_oy: 1
 via_pose_oz: 0
 via_pose_ow: 0
-home_joint1: 90
+home_joint1: 0
 home_joint2: -90
-home_joint3: 0
+home_joint3: 90
 home_joint4: -90
 home_joint5: -90
 home_joint6: 90

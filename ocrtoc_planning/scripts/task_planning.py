@@ -119,6 +119,7 @@ class TaskPlanner(object):
         request_msg = PerceptionTargetRequest()
         request_msg.target_object_list = target_object_list
         rospy.loginfo('Start to call perception node')
+        print('*'*200,request_msg)
         perception_result = self._service_get_target_pose(request_msg)
         rospy.loginfo('Perception finished')
 
