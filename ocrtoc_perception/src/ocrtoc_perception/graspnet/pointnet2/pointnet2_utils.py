@@ -525,7 +525,13 @@ class CylinderQueryAndGroup(nn.Module):
         if self.normalize_xyz:
             grouped_xyz /= self.radius
         if self.rotate_xyz:
+            print("2222222222222222222222222222222222222222222222222")
+            print(rot)
+            print("==")
+            print(grouped_xyz)
             grouped_xyz_ = grouped_xyz.permute(0, 2, 3, 1).contiguous() # (B, npoint, nsample, 3)
+            print("==")
+            print(grouped_xyz_)
             grouped_xyz_ = torch.matmul(grouped_xyz_, rot)
             grouped_xyz = grouped_xyz_.permute(0, 3, 1, 2).contiguous()
 

@@ -574,7 +574,7 @@
     <child link="tool0"/>
   </joint>
   <joint name="realsense_camera_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.05 0 0.028"/>
+    <origin rpy="0 0 0" xyz="0.1 0 0.038"/>
     <parent link="hand_link"/>
     <child link="realsense_link"/>
   </joint>
