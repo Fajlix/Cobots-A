@@ -16,14 +16,14 @@ if __name__ == '__main__':
     print('-'*80)
     print(numpy_trans)
     print(type(numpy_trans))
-    print(panda_link8_pose)
-    panda_link8_pose.header.frame_id = "wrist_3_link"
-    panda_link8_pose.pose.position.x = 1.0
-    panda_link8_pose.pose.orientation.w = 1.0
+    print(base_link_pose)
+    base_link_pose.header.frame_id = "wrist_3_link"
+    base_link_pose.pose.position.x = 1.0
+    base_link_pose.pose.orientation.w = 1.0
     print('-'*80)
-    print(panda_link8_pose)
+    print(base_link_pose)
 
     world_pose = transform_manager.do_transform_ros_posestamped(
-        panda_link8_pose, ros_trans)
+        base_link_pose, ros_trans)
     print('-'*80)
     print(world_pose)

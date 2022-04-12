@@ -86,7 +86,7 @@ class MotionPlanner(object):
         entrance_transformation.rotation.w = 1
         self._entrance_transformation_matrix = self._transformer.ros_transform_to_matrix4x4(entrance_transformation)
         print('*='*100)
-	print(self._transformer)
+        print(self._transformer)
         ee_transform = self._transformer.lookup_ros_transform("tool0", "wrist_3_link")
         self._ee_transform_matrix = self._transformer.ros_transform_to_matrix4x4(ee_transform.transform)
 
