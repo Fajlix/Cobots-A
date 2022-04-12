@@ -576,7 +576,7 @@
   <joint name="ee_rg2_fixed_joint" type="fixed">
     <parent link="tool0"/>
     <child link="rg2_base_link"/>
-    <origin rpy="0 -1.570796327 0" xyz="0 0 0.004"/>
+    <origin rpy="0 -1.570796327 0" xyz="1 0 0.01"/>
   </joint>
   <joint name="base_joint" type="fixed">
     <parent link="world"/>

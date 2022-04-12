@@ -86,4 +86,4 @@ response:
     angle_thresh: 20
     mask_thresh: 0.5
 
-debug: False
+debug: True
