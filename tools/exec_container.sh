@@ -1,1 +1,1 @@
-docker exec -it cobotsA bash
+docker exec -it real_cobotsA bash
