@@ -1,3 +1,9 @@
 [submodule "/home/x/Cobots-A/ocrtoc_planning/pddlstream"]
 	path = ocrtoc_planning/pddlstream
 	url = https://github.com/caelan/pddlstream.git
+[submodule "Universal_Robots_ROS_Driver"]
+	path = Universal_Robots_ROS_Driver
+	url = https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
+[submodule "fmauch_universal_robot"]
+	path = fmauch_universal_robot
+	url = https://github.com/fmauch/universal_robot.git

@@ -63,7 +63,15 @@ RUN pip3 install catkin_pkg numpy transforms3d rospkg \
                           ros-melodic-socketcan-interface \
                           ros-melodic-soem \
                           ros-melodic-ur-msgs \
-                          ros-melodic-visp-hand2eye-calibration
+                          ros-melodic-visp-hand2eye-calibration \
+                          ros-melodic-ur-client-library \
+                          ros-melodic-cartesian-trajectory-controller \
+                          ros-melodic-twist-controller \
+                          ros-melodic-pass-through-controllers \
+                          ros-melodic-speed-scaling-interface \
+                          ros-melodic-industrial-robot-status-controller \
+                          ros-melodic-speed-scaling-state-controller \
+                          ros-melodic-scaled-joint-trajectory-controller
 
 # Install drivers.
 RUN curl -sSL https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
@@ -187,6 +195,7 @@ RUN cd /root \
     && mkdir -p ocrtoc_ws/src \
     && cd ocrtoc_ws \
     && source /opt/ros/melodic/setup.bash \
+    && rosdep install --from-paths src --ignore-src -y
     && catkin_make -j8\
     && echo "source /root/ocrtoc_ws/devel/setup.bash" >> ~/.bashrc \
     && rm -rf /var/lib/apt/lists/*
