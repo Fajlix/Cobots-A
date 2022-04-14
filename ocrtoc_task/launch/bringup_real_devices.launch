@@ -13,7 +13,7 @@
   <!-- changed to files from universal_robot to get UR10 -->
   <include file="$(find ur_robot_driver)/launch/ur10_bringup.launch" >
     <arg name="robot_ip" value="$(arg robot_ip)"/>
-    <arg name="kinematics_config" value="/root/ocrtoc_ws/src/my_robot_calibration.yaml" />
+    <arg name="kinematics_config" value="/root/ocrtoc_ws/src/ur10_robot_calibration.yaml" />
     <!--
     <arg name="load_gripper" value="$(arg load_gripper)"/>
     -->
