@@ -13,7 +13,10 @@
   <!-- Launch moveit -->
   <include file="$(find ur10_moveit_config)/launch/move_group.launch">
     <arg name="debug" default="$(arg debug)" />
+    <arg name="publish_monitored_planning_scene" value ="true" />
   </include>
+
+  <include file="$(find myrg2ur10_moveit_config)/launch/moveit_rviz.launch" > </include>
   <node name="manipulator_interface_node" pkg="ocrtoc_common" type="manipulator_interface_node.py" output="screen" />
    
 </launch>

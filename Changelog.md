@@ -1,8 +1,14 @@
 To do:
 * check so correct ros topics/services etc are started, to ensure that OCRTOC files works. (this could probably be done using launch files from myrg2ur10_moveit_config, just need to point them to correct driver)
 * add gripper script from Ahmet (can be found on Teams)
+* add realsense-ros driver as submodule?
 
 * Clean up repo, remove unused folders/files, move drivers into drivers/ folder etc.
+
+21-04:
+Moved Universal Robots ROS Driver and fmauch universal robot to drivers folder
+added missing step in readme
+changed ur10_moveit_planning_execution.launch to match myrg2ur10_planning_execution.launch
 
 19-04:
 Removed changes in Dockerfile as it is not used.

@@ -26,11 +26,13 @@ bash tools/exec_container.sh
 cd /root/ocrtoc_ws/src/tools
 bash setup_env.sh
 ```
+This will give some errors as the Universal Robots driver is not installed yet.
 
 Install the Universal Robots driver in Docker image:
 
 ```
 cd /root/ocrtoc_ws/
+sudo apt update -qq
 rosdep install --from-paths src --ignore-src -y
 catkin_make
 source devel/setup.bash
