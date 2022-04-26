@@ -1,8 +1,15 @@
 To do:
 * check so correct ros topics/services etc are started, to ensure that OCRTOC files works. (this could probably be done using launch files from myrg2ur10_moveit_config, just need to point them to correct driver)
 * add gripper script from Ahmet (can be found on Teams)
+* fix goal states in test_manipulator_interface.py to correct ones
 
 * Clean up repo, remove unused folders/files, move drivers into drivers/ folder etc.
+
+26-04:
+changed manipulator name UR10_arm -> manipulator in moveit config
+changed timeout limits in trajectory_execution.launch.xml
+added missing step in readme
+added home pose to realur10_moveit_config (robot arm 90 deg over the table, pose is slightly off.)
 
 19-04:
 Removed changes in Dockerfile as it is not used.

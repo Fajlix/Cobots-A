@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 
 import rospy
+from tf.transformations import quaternion_from_euler
 from ocrtoc_common.srv import *
 
 if __name__ == "__main__":
@@ -30,7 +31,8 @@ if __name__ == "__main__":
 
     rospy.sleep(2.0)
     request = JointSpaceGoalRequest()
-    request.joint_goal = [1.48, -0.22 , -0.19, -2.41, -0.645, 1.51, 0.0]
+    #request.joint_goal = [1.48, -0.22 , -0.19, -2.41, -0.645, 1.51, 0.0]
+    request.joint_goal = [-1.57070, -1.5707, -1.5707, -1.5707, -1.5707, -1.5707]
     print('='*80)
     print(response.joint_position_list)
     print(request.joint_goal)
@@ -47,13 +49,22 @@ if __name__ == "__main__":
     rospy.sleep(5.0)
     request = PoseGoalRequest()
     # Goal in 'world' frame
-    request.goal.position.x = -0.343232254619
-    request.goal.position.y = -0.525294298568
-    request.goal.position.z = 0.488844847508
-    request.goal.orientation.x = -0.332872961262
-    request.goal.orientation.y = 0.623855146947
-    request.goal.orientation.z = 0.334828632737
-    request.goal.orientation.w = 0.622808264226
+    # request.goal.position.x = -0.343232254619
+    # request.goal.position.y = -0.525294298568
+    # request.goal.position.z = 0.488844847508
+    # request.goal.orientation.x = -0.332872961262
+    # request.goal.orientation.y = 0.623855146947
+    # request.goal.orientation.z = 0.334828632737
+    # request.goal.orientation.w = 0.622808264226
+    q = quaternion_from_euler(-1.5707*1.25, 0, -1.5707/2)
+    # Goal in 'world' frame
+    request.goal.position.x = -0.25
+    request.goal.position.y = -0.625294298568
+    request.goal.position.z = 0.588844847508
+    request.goal.orientation.x = q[0]
+    request.goal.orientation.y = q[1]
+    request.goal.orientation.z = q[2]
+    request.goal.orientation.w = q[3]
     print('='*80)
     print(request.goal)
     rospy.wait_for_service('/send_pose_goal')

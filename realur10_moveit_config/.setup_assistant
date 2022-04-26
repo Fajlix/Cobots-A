@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: Tove
     author_email: ctove@student.chalmers.se
-    generated_timestamp: 1649924572
+    generated_timestamp: 1650963048

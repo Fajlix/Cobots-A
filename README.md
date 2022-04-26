@@ -31,6 +31,7 @@ Install the Universal Robots driver in Docker image:
 
 ```
 cd /root/ocrtoc_ws/
+sudo apt update -qq
 rosdep install --from-paths src --ignore-src -y
 catkin_make
 source devel/setup.bash
