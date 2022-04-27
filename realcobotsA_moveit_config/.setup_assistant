@@ -1,11 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
     package: ur_description
-    relative_path: urdf/ur10.xacro
+    relative_path: urdf/ur10_cobotsA.xacro
     xacro_args: ""
   SRDF:
     relative_path: config/ur10_robot.srdf
   CONFIG:
     author_name: Tove
     author_email: ctove@student.chalmers.se
-    generated_timestamp: 1651049949
+    generated_timestamp: 1651057035

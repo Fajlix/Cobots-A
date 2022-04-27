@@ -2,8 +2,32 @@ To do:
 * check so correct ros topics/services etc are started, to ensure that OCRTOC files works. (this could probably be done using launch files from myrg2ur10_moveit_config, just need to point them to correct driver)
 * add gripper script from Ahmet (can be found on Teams)
 * fix goal states in test_manipulator_interface.py to correct ones
+* need to add "rosrun tf stac_transform_publisher 0 0 0 1.5707 0 0  world base_link 5" to launch files for real robot, otherwise world frame does not exist (as in ocrtoc_franka.launch and panda_control_moveit_rviz.launch in OCRTOC)
+* add correct table measurements
+* move ur10_cobotsA.xacro out of submodule
 
+General:
 * Clean up repo, remove unused folders/files, move drivers into drivers/ folder etc.
+
+27-04:
+created new file ur10_cobotsA.xacro to add links world and table to moveit config and created new moveit config
+table loads in rviz so collisions are avoided
+
+trajectory_execution.launch.xml: Comment out line 21 due to "WARN: unrecognized 'param' tag in <include> tag".
+
+robot pos:
+38.5 cm djup
+50 cm bredd
+
+robot bord:
+77 cm djup
+1 m bredd
+76.5 cm höjd
+
+bord:
+130 cm bredd
+65 cm djup
+72 cm höjd
 
 26-04:
 changed manipulator name UR10_arm -> manipulator in moveit config
