@@ -1,15 +1,35 @@
 To do:
 * check so correct ros topics/services etc are started, to ensure that OCRTOC files works. (this could probably be done using launch files from myrg2ur10_moveit_config, just need to point them to correct driver)
 * add gripper script from Ahmet (can be found on Teams)
-* fix goal states in test_manipulator_interface.py to correct ones
-* need to add "rosrun tf stac_transform_publisher 0 0 0 1.5707 0 0  world base_link 5" to launch files for real robot, otherwise world frame does not exist (as in ocrtoc_franka.launch and panda_control_moveit_rviz.launch in OCRTOC)
+* need to add "rosrun tf static_transform_publisher 0 0 0 1.5707 0 0  world base_link 5" to launch files for real robot, otherwise world frame does not exist (as in ocrtoc_franka.launch and panda_control_moveit_rviz.launch in OCRTOC)
 * add correct table measurements
-* move ur10_cobotsA.xacro out of submodule
+
 
 General:
 * Clean up repo, remove unused folders/files, move drivers into drivers/ folder etc.
 
+
+28-04:
+removed folder that is not used:
+roboticsgroup_gazebo_plugins
+
+added folder "cobotsA_config" for robot/project specific files
+moved robot calibration file (changed line in to point there)
+moved ur10_cobotsA.xacro file (changed line 9 in planning_context.launch to point there)
+done:
+* move ur10_cobotsA.xacro out of submodule
+
+camera nodelet /realsense/realsense2_camera does not launch
+
 27-04:
+for perception: installed pytorch poits3D to avod CUDA KNN errors
+Created the camera positions for the real robot. Then created a test script that goes through the positions and stays there for 2 seconds. The test
+was succsessful. 
+done:
+* fix goal states in test_manipulator_interface.py to correct ones
+
+added same poses in perception module
+
 created new file ur10_cobotsA.xacro to add links world and table to moveit config and created new moveit config
 table loads in rviz so collisions are avoided
 

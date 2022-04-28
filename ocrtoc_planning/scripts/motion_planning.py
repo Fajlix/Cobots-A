@@ -74,7 +74,7 @@ class MotionPlanner(object):
         self._move_group.set_start_state_to_current_state()
         self._end_effector = self._move_group.get_end_effector_link()
         self._at_home_pose = False
-        self._gripper_client = actionlib.SimpleActionClient('/gripper_controller/gripper_action', control_msgs.msg.GripperCommandAction)
+        #self._gripper_client = actionlib.SimpleActionClient('/gripper_controller/gripper_action', control_msgs.msg.GripperCommandAction)
         self._transformer = TransformInterface()
         entrance_transformation = Transform()
         entrance_transformation.translation.x = 0
@@ -372,22 +372,22 @@ class MotionPlanner(object):
 
     # pick action
     def pick(self):
-        self._gripper_client.wait_for_server()
+        #self._gripper_client.wait_for_server()
         goal = control_msgs.msg.GripperCommandGoal()
         goal.command.position = 0.0
         goal.command.max_effort = 30
 
-        self._gripper_client.send_goal(goal)
+        #self._gripper_client.send_goal(goal)
         rospy.sleep(2.0)
 
     # place action
     def place(self):
-        self._gripper_client.wait_for_server()
+        #self._gripper_client.wait_for_server()
         goal = control_msgs.msg.GripperCommandGoal()
         goal.command.position = 0.039
         goal.command.max_effort = 30
 
-        self._gripper_client.send_goal(goal)
+        #self._gripper_client.send_goal(goal)
         rospy.sleep(2.0)
 
     # get a list of via points from current position to target position (add exit and entrance point to pick and place position)
