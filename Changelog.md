@@ -21,6 +21,8 @@ done:
 
 camera nodelet /realsense/realsense2_camera does not launch
 
+remove camera folders and readd as submodules
+
 27-04:
 for perception: installed pytorch poits3D to avod CUDA KNN errors
 Created the camera positions for the real robot. Then created a test script that goes through the positions and stays there for 2 seconds. The test

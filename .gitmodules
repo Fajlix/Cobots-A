@@ -8,3 +8,7 @@
 	path = fmauch_universal_robot
 	url = https://github.com/fmauch/universal_robot.git
 	branch = calibration_devel
+[submodule "drivers/realsense-ros"]
+	path = drivers/realsense-ros
+	url = https://github.com/IntelRealSense/realsense-ros.git
+	branch = development
