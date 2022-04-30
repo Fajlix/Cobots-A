@@ -4,6 +4,7 @@ import rospy
 from tf.transformations import quaternion_from_euler
 from ocrtoc_common.srv import *
 import csv
+import numpy as np
 
 if __name__ == "__main__":
     print('='*80)
@@ -35,9 +36,11 @@ if __name__ == "__main__":
     with open("test_poses.csv") as file:
         reader = csv.reader(file, delimiter = ',')
         for row in reader:
-            request.joint_goal = row
+            nprow = np.array(row)
+            nprow = nprow.astype(np.float)
+            request.joint_goal = nprow.tolist()
             print('='*80)
-            print(response.joint_position_list)
+            #print(response.joint_position_list)
             print(request.joint_goal)
             rospy.wait_for_service('/send_joint_space_goal')
             try:
@@ -46,6 +49,6 @@ if __name__ == "__main__":
                 print(response)
             except rospy.ServiceException as e:
                 print("Service call failed: %s"%e)
-
+            rospy.sleep(2.0)
     print()
     print()

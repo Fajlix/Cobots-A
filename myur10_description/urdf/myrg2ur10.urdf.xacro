@@ -24,14 +24,12 @@
     </collision>
   </link>
     <xacro:arg name = "transmission_hw_interface" default = "hardware_interface/PositionJointInterface"/>
-    
-    <xacro:include filename = "$(find ur_description)/urdf/common.gazebo.xacro"/>
-    
-    <xacro:include filename = "$(find ur_description)/urdf/ur10.urdf.xacro"/>
+        
+    <xacro:include filename = "$(find ur_description)/urdf/ur10.xacro"/>
     
     <xacro:include filename = "$(find rg2_description)/urdf/rg2.urdf.xacro"/>
     
-    <xacro:ur10_robot prefix="" joint_limited="true" transmission_hw_interface= "$(arg transmission_hw_interface)"/>
+    <xacro:ur10_robot prefix="" transmission_hw_interface= "$(arg transmission_hw_interface)"/>
     
     <joint name="ee_rg2_fixed_joint" type="fixed">
       <parent link="tool0"/>

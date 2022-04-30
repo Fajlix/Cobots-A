@@ -1,13 +1,32 @@
 To do:
-* check so correct ros topics/services etc are started, to ensure that OCRTOC files works. (this could probably be done using launch files from myrg2ur10_moveit_config, just need to point them to correct driver)
 * add gripper script from Ahmet (can be found on Teams)
 * need to add "rosrun tf static_transform_publisher 0 0 0 1.5707 0 0  world base_link 5" to launch files for real robot, otherwise world frame does not exist (as in ocrtoc_franka.launch and panda_control_moveit_rviz.launch in OCRTOC)
 * add correct table measurements
+* correct the area where pointcloud is captured to be true to the size of the table
 
 
 General:
 * Clean up repo, remove unused folders/files, move drivers into drivers/ folder etc.
 
+30-04:
+changed name arm_poses_Franka_realsense to arm_poses_UR10_realsense, perception_franka_in_real to perception_UR10_in_real
+
+in transform_interface.py added:
+from tf.transformations import quaternion_from_euler
+in function matrix4x4_to_ros_pose:
+q = quaternion_from_euler(0, 0, 2.356), add q to all quenternion values
+
+knn_modules.py:
+from knn_pytorch import knn_pytorch -> import knn_pytorch
+
+robot now moves to positions, takes pictures and creates a merged pointcloud.
+
+29-04:
+Created URDF for robot from xacro file
+set up joints/frames to connect camera to robot, extended size of area to be captured in pointcloud so the whole table is included
+ran ocrtoc trigger: UR10 sucessfully went to all positions and took pictures/pointclouds, but crashes when creating the merged pointcloud.
+done:
+* check so correct ros topics/services etc are started, to ensure that OCRTOC files works. (this could probably be done using launch files from myrg2ur10_moveit_config, just need to point them to correct driver)
 
 28-04:
 removed folder that is not used:
@@ -21,10 +40,12 @@ done:
 
 camera nodelet /realsense/realsense2_camera does not launch
 
-remove camera folders and readd as submodules
+remove camera folders and readd as submodule. camera works now and takes a picture.
+running ocrtoc_task solution/trigger works now, only goes to first pose and takes picture
 
 27-04:
 for perception: installed pytorch poits3D to avod CUDA KNN errors
+pip install torch-points3d
 Created the camera positions for the real robot. Then created a test script that goes through the positions and stays there for 2 seconds. The test
 was succsessful. 
 done:

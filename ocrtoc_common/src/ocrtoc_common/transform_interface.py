@@ -10,6 +10,7 @@ import geometry_msgs.msg
 import rospy
 import tf
 import tf2_ros
+from tf.transformations import quaternion_from_euler
 
 class TransformInterface(object):
     def __init__(self):
@@ -69,14 +70,15 @@ class TransformInterface(object):
 
     def matrix4x4_to_ros_pose(self, matrix):
         pose = Pose()
+        q = quaternion_from_euler(0, 0, 2.356)
         quaternion = transforms3d.quaternions.mat2quat(matrix[0:3, 0:3])
         pose.position.x = matrix[0, 3]
         pose.position.y = matrix[1, 3]
         pose.position.z = matrix[2, 3]
-        pose.orientation.w = quaternion[0]
-        pose.orientation.x = quaternion[1]
-        pose.orientation.y = quaternion[2]
-        pose.orientation.z = quaternion[3]
+        pose.orientation.x = quaternion[1] + q[0]
+        pose.orientation.y = quaternion[2] + q[1]
+        pose.orientation.z = quaternion[3] + q[2]
+        pose.orientation.w = quaternion[0] + q[3]
         return pose
 
     def do_transform_ros_posestamped(

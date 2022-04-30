@@ -438,9 +438,9 @@ class Perceptor():
         full_pcd, color_images, camera_poses = self.capture_data()
         # Compute Grasping Poses (Many Poses in a Scene)
         gg = self.compute_grasp_pose(full_pcd)
-        if self.debug:
-            frame = o3d.geometry.TriangleMesh.create_coordinate_frame(0.1)
-            o3d.visualization.draw_geometries([frame, full_pcd, *gg.to_open3d_geometry_list()])
+        #if self.debug:
+        frame = o3d.geometry.TriangleMesh.create_coordinate_frame(0.1)
+        o3d.visualization.draw_geometries([frame, full_pcd, *gg.to_open3d_geometry_list()])
 
         # Computer Object 6d Poses
         object_poses = self.compute_6d_pose(

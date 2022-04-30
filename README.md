@@ -22,37 +22,36 @@ bash tools/exec_container.sh
 
 ### In the docker image:
 
+Install the Universal Robots driver in Docker image:
+
 ```
+sudo apt update -qq
+rosdep install --from-paths src/Universal_Robots_ROS_Driver --ignore-src -y
 cd /root/ocrtoc_ws/src/tools
 bash setup_env.sh
 ```
 
-Install the Universal Robots driver in Docker image:
-
-```
-cd /root/ocrtoc_ws/
-sudo apt update -qq
-rosdep install --from-paths src --ignore-src -y
-catkin_make
-source devel/setup.bash
-```
-
 ## Control robot arm
-Open 3 terminal windows.
+run each command in a new terminal window
 
-1:
+
 ```
-roslaunch ocrtoc_task bringup_real_devices.launch
-```
-2:
-```
-roslaunch realur10_moveit_config ur10_moveit_planning_execution.launch
-```
-3:
-```
-roslaunch realur10_moveit_config moveit_rviz.launch rviz_config:=$(rospack find realur10_moveit_config)/launch/moveit.rviz
+roslaunch ocrtoc_task bringup_real_devices.launch #The realsense camera will give some errors, it's fine.
+
+roslaunch ocrtoc_perception perception_solution.launch
+
+roslaunch ocrtoc_planning planning_solution.launch 
+
+roslaunch realcobotsA_moveit_config ur10_moveit_planning_execution.launch 
+
+rosrun tf static_transform_publisher 0 0 0 1.5707 0 0  world base_link 5
+
+rosrun tf static_transform_publisher 0 0 0 0 0 0  camera_link realsense_link 5
+
+roslaunch ocrtoc_task trigger.launch 
+
 ```
 
 ### For controllers to load, you need to stop and start the robot on the robot control board!
 
-The real robot arm will follow Rviz motions. For scripts, 0 degrees is in front of robot as it is installed on the table in PSL.
+The real robot arm will follow Rviz motions.
