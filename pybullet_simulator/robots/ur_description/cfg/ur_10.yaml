@@ -52,4 +52,4 @@ gripper_link_names:
 - hand_link
 - l_finger_link
 - r_finger_link
-tool_frame_name: tool
+tool_frame_name: gripper_mid

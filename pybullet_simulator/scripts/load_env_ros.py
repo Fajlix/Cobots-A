@@ -39,7 +39,9 @@ if __name__ == '__main__':
     ur10_config_path = os.path.join(pkg_path, 'robots/ur_description/cfg/ur_10.yaml')
     robot = Manipulator.loadFromURDF(urdf_path=ur10_urdf_path, config_path = ur10_config_path)
     print('robot id:{}, type:{}'.format(robot.id, type(robot.id)))
-    
+    robot.goHome(0.2)
+    for _ in range(30):
+        sim_env.step()
     # load scene
     folder = os.path.join(rospack.get_path('ocrtoc_materials'), 'scenes')
     task_index = rospy.get_param('~task_index')
@@ -63,7 +65,7 @@ if __name__ == '__main__':
     print(pose_dict)
 
 
-    robot.goHome(0.2)
+
 
     from gazebo_msgs.msg import ModelState
     from gazebo_ros.gazebo_interface import GetModelState
@@ -78,7 +80,7 @@ if __name__ == '__main__':
         if model_name in pose_dict:
             print("reset pose of " + model_name)
             pose = pose_dict[model_name]
-            position = [pose[0], pose[1], pose[2] + TABLE_HEIGHT]
+            position = [pose[0]-0.42, pose[1], pose[2] + TABLE_HEIGHT]
             quaternion = pybullet.getQuaternionFromEuler(
                 [pose[3], pose[4], pose[5]])
             pybullet.resetBasePositionAndOrientation(

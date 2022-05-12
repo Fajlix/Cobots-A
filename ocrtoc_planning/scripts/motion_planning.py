@@ -86,8 +86,8 @@ class MotionPlanner(object):
         entrance_transformation.rotation.w = 1
         self._entrance_transformation_matrix = self._transformer.ros_transform_to_matrix4x4(entrance_transformation)
         print('*='*100)
-	print(self._transformer)
-        ee_transform = self._transformer.lookup_ros_transform("tool0", "wrist_3_link")
+        print(self._transformer)
+        ee_transform = self._transformer.lookup_ros_transform("gripper_mid", "tool0")
         self._ee_transform_matrix = self._transformer.ros_transform_to_matrix4x4(ee_transform.transform)
 
         self.to_home_pose()
@@ -374,7 +374,7 @@ class MotionPlanner(object):
     def pick(self):
         self._gripper_client.wait_for_server()
         goal = control_msgs.msg.GripperCommandGoal()
-        goal.command.position = 0.0
+        goal.command.position = -0.1
         goal.command.max_effort = 30
 
         self._gripper_client.send_goal(goal)
@@ -384,7 +384,7 @@ class MotionPlanner(object):
     def place(self):
         self._gripper_client.wait_for_server()
         goal = control_msgs.msg.GripperCommandGoal()
-        goal.command.position = 0.039
+        goal.command.position = 0.5
         goal.command.max_effort = 30
 
         self._gripper_client.send_goal(goal)

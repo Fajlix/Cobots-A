@@ -42,8 +42,8 @@ if __name__ == '__main__':
         print("Usage:")
         print("rosrun ocrtoc_task trigger.py task_file:=/root/ocrtoc_ws/src/ocrtoc_materials/targets/1-1.yaml")
         sys.exit()
-
     task_manager.wait_for_server()
+    print(evaluation)
     if evaluation:
         gd = Grasp_Detector(task_index = task_index, log_file = log_file)
         gd_thread = Thread(target = gd.monitor_main_loop)

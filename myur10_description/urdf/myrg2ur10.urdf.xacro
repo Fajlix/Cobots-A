@@ -36,13 +36,18 @@
     <joint name="ee_rg2_fixed_joint" type="fixed">
       <parent link="tool0"/>
         <child link="rg2_base_link"/>
-      <origin xyz="0 0 0.004" rpy="0 ${-pi/2.0} 0"/>
+      <origin xyz="0 0 0.004" rpy="${pi} ${-pi/2.0} 0"/>
     </joint>
-    
-    
+    <link name="gripper_mid"/>
+    <joint name="gripper_mid_joint" type="fixed">
+      <parent link="tool0"/>
+        <child link="gripper_mid"/>
+      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    </joint>
+    <xacro:arg name="use_nominal_extrinsics" default="false" />
     <joint name="base_joint" type="fixed">
       <parent link="world"/>
       <child link="base_link"/>
-      <origin xyz ="0 0 0" rpy="0.0 0.0 0.0"/>
+      <origin xyz ="0.0 0 0.0" rpy="0.0 0.0 0.0"/>
     </joint>
 </robot>

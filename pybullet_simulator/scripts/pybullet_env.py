@@ -813,7 +813,6 @@ class Manipulator(SimRobot):
         # CubicSpline
         # jointTrajectory = CubicSpline(x=np.array(times), y=np.array(values), axis=0, bc_type=((1, np.zeros_like(values[0])), (1, np.zeros_like(values[-1]))))
         # # inter1d
-        print('These are the values: {} and times {}'.format(values,times))
         jointTrajectory = interp1d(x=np.array(times), y=np.array(values), axis=0, fill_value=(values[0], values[-1]), bounds_error=False)
         return jointTrajectory
 
@@ -962,7 +961,7 @@ class Manipulator(SimRobot):
             for i in range(self.getNumJoints()):
                 current_link_name = self.getLinkName(i)
                 parent_link_name = self.getParentLinkName(i)
-                if parent_link_name == 'base_link':
+                if parent_link_name == 'world':
                     tf_pre = np.dot(tf.transformations.translation_matrix(self.getBasePosition()), tf.transformations.quaternion_matrix(self.getBaseOrientation()))
                 else:
                     tf_pre = np.dot(tf.transformations.translation_matrix(self.getLinkPosition(parent_link_name)), tf.transformations.quaternion_matrix(self.getLinkOrientation(parent_link_name)))

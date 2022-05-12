@@ -1,0 +1,29 @@
+digraph G {
+"rg2_base_link" -> "hand_link"[label="Broadcaster: /ros_interface\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1652213187.479 sec old)\nBuffer length: 0.000 sec\n"];
+"tool0" -> "rg2_base_link"[label="Broadcaster: /ros_interface\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1652213187.479 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "base"[label="Broadcaster: /ros_interface\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1652213187.479 sec old)\nBuffer length: 0.000 sec\n"];
+"wrist_3_link" -> "ee_link"[label="Broadcaster: /ros_interface\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1652213187.479 sec old)\nBuffer length: 0.000 sec\n"];
+"wrist_2_link" -> "wrist_3_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.425 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.604 sec\n"];
+"wrist_3_link" -> "tool0"[label="Broadcaster: /ros_interface\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1652213187.479 sec old)\nBuffer length: 0.000 sec\n"];
+"tool0" -> "gripper_mid"[label="Broadcaster: /ros_interface\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1652213187.479 sec old)\nBuffer length: 0.000 sec\n"];
+"base" -> "table"[label="Broadcaster: /ros_interface\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1652213187.479 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "shoulder_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.417 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.608 sec\n"];
+"shoulder_link" -> "upper_arm_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.418 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.607 sec\n"];
+"upper_arm_link" -> "forearm_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.419 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.607 sec\n"];
+"forearm_link" -> "wrist_1_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.423 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.605 sec\n"];
+"wrist_1_link" -> "wrist_2_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.424 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.605 sec\n"];
+"hand_link" -> "l_moment_arm_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.431 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.602 sec\n"];
+"l_moment_arm_link" -> "l_finger_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.433 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.601 sec\n"];
+"hand_link" -> "l_truss_arm_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.434 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.600 sec\n"];
+"hand_link" -> "r_moment_arm_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.435 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.600 sec\n"];
+"r_moment_arm_link" -> "r_finger_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.436 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.600 sec\n"];
+"hand_link" -> "r_truss_arm_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.437 Hz\nMost recent transform: 1652213187.361 ( 0.118 sec old)\nBuffer length: 4.599 sec\n"];
+"hand_link" -> "realsense_link"[label="Broadcaster: /ros_interface\nAverage rate: 5.221 Hz\nMost recent transform: 1652213187.359 ( 0.120 sec old)\nBuffer length: 4.597 sec\n"];
+"realsense_link" -> "realsense_color_optical_frame"[label="Broadcaster: /ros_interface\nAverage rate: 5.221 Hz\nMost recent transform: 1652213187.360 ( 0.119 sec old)\nBuffer length: 4.597 sec\n"];
+"realsense_color_optical_frame" -> "realsense_depth_optical_frame"[label="Broadcaster: /ros_interface\nAverage rate: 5.222 Hz\nMost recent transform: 1652213187.360 ( 0.119 sec old)\nBuffer length: 4.596 sec\n"];
+"realsense_link" -> "realsense_camera_frame"[label="Broadcaster: /ros_interface\nAverage rate: 5.222 Hz\nMost recent transform: 1652213187.360 ( 0.119 sec old)\nBuffer length: 4.596 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1652213187.479" shape=plaintext ] ;
+ }->"world";[
+}

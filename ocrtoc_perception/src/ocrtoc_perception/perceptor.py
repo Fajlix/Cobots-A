@@ -434,11 +434,11 @@ class Perceptor():
             dict, dict: object 6d poses and grasp poses.
         '''
         # Capture Data
-        print('111111111111111111111111111111111111111')
+        
         full_pcd, color_images, camera_poses = self.capture_data()
         # Compute Grasping Poses (Many Poses in a Scene)
         gg = self.compute_grasp_pose(full_pcd)
-        if self.debug:
+        if True:
             frame = o3d.geometry.TriangleMesh.create_coordinate_frame(0.1)
             o3d.visualization.draw_geometries([frame, full_pcd, *gg.to_open3d_geometry_list()])
 
@@ -453,6 +453,8 @@ class Perceptor():
 
         # Assign the Best Grasp Pose on Each Object
         grasp_poses, remain_gg = self.assign_grasp_pose(gg, object_poses)
+        print('111111111111111111111111111111111111111')
+        print(grasp_poses)
         if self.debug and pose_method == 'icp':
             o3d.visualization.draw_geometries([full_pcd, *remain_gg])
         return object_poses, grasp_poses

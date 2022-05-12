@@ -28,8 +28,9 @@ class Grasp_Detector():
         self.update_frequency = update_frequency
         self.log_file = log_file
         self.min_count = min_count
-        
+        print("2.0")
         rospy.wait_for_service('/get_model_state')
+        rint("2.1")
         self.get_model_state = rospy.ServiceProxy('/get_model_state', GetModelState)
         self.grasped_alias_set = set()
         self.object_list = self.load_object_list()
@@ -41,7 +42,7 @@ class Grasp_Detector():
         rospy.loginfo('alias list:{}'.format(self.alias_list))
 
     def get_eelink_pose(self):
-        numpy_trans = self.transform_manager.lookup_numpy_transform('world', 'panda_ee_link')
+        numpy_trans = self.transform_manager.lookup_numpy_transform('world', 'gripper_mid')
         return numpy_trans
 
     def load_object_list(self):
