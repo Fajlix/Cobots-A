@@ -54,8 +54,14 @@
   <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro"/>
 
   <xacro:include filename="$(find ur_description)/urdf/inc/ur10_macro.xacro"/>
+  <xacro:include filename="$(find rg2_description)/urdf/rg2.urdf.xacro"/>
+    <joint name ="rg2_fixed_joint" type="fixed">
+    <parent link="tool0"/>
+    <child link="rg2_base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -1.5707 1.5707"/>
+  </joint>
   <xacro:ur10_robot prefix="" />
-  <xacro:sensor_d435 parent="wrist_3_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
-    <origin xyz="0 -0.046 -0.08" rpy="0 -1.5707 1.5707"/>
+  <xacro:sensor_d435 parent="hand_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
+    <origin xyz="0.088 0.0 0.046" rpy="0 0 0"/>
   </xacro:sensor_d435>
 </robot>

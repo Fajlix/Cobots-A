@@ -1,6 +1,8 @@
 import actionlib
 import control_msgs.msg
 import rospy
+import Gripper_Registers as gs
+
 
 class GripperInterface(object):
     """Python gripper interface
@@ -11,6 +13,7 @@ class GripperInterface(object):
     def __init__(self, topic_name = '/franka_gripper/gripper_action'):
         self.topic_name = topic_name
         self._gripper_client = actionlib.SimpleActionClient(self.topic_name, control_msgs.msg.GripperCommandAction)
+        gs.init()
 
     def go_to_position(self, position, max_effort = 30, wait_time = 2.0):
         """Move the gripper to position
@@ -29,7 +32,11 @@ class GripperInterface(object):
         rospy.sleep(wait_time)
 
     def close(self):
-        self.go_to_position(position = 0.0, max_effort = 30, wait_time = 2.0)
+        #gs.init()
+        gs.operate_gripper(grip_width_mm = 0, grip_force_N = 5)
+        #self.go_to_position(position = 0.0, max_effort = 30, wait_time = 2.0)
 
     def open(self):
-        self.go_to_position(position = 0.078, max_effort = 30, wait_time = 2.0)
+        gs.init()
+        gs.operate_gripper(grip_width_mm = 83, grip_force_N = 10)
+        #self.go_to_position(position = 0.078, max_effort = 30, wait_time = 2.0)

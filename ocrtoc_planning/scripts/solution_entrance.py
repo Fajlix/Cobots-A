@@ -32,7 +32,7 @@ class SolutionServer(object):
         self.planner.cycle_plan_all()
         rospy.loginfo("planning finished")
 
-        # Example: set status "Aborted" and quit.
+        # Example:action_server set status "Aborted" and quit.
         if self.action_server.is_preempt_requested():
             self.result.status = "Aborted"
             self.action_server.set_aborted(self.result)

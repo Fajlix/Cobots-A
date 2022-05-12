@@ -201,6 +201,7 @@ class Perceptor():
             else:
                 arm_poses = np.array(self.fixed_arm_poses_both).tolist()
             for arm_pose in arm_poses:
+                
                 self.arm_controller.exec_joint_goal(arm_pose)
                 rospy.sleep(2.0)
                 time.sleep(1.0)
@@ -316,7 +317,7 @@ class Perceptor():
         #            / |
         #           /--|
         #          /   |
-        #         /    |
+        #         /    |assign_grasp_pose
         # Angle should be smaller than this angle
 
         object_names = []
@@ -368,7 +369,7 @@ class Perceptor():
             # For safety and planning difficulty reason, grasp pose with small angle with gravity direction will be accept.
             # if no grasp pose is available within the safe cone. grasp pose with the smallest angle will be used without
             # considering the angle.
-            if np.sum(add_angle_mask) < self.config['response']['mask_thresh']: # actually this should be mask == 0, for safety reason, < 0.5 is used.
+            if np.sum(add_angle_mask) == 0: # actually this should be mask == 0, for safety reason, < 0.5 is used.
                 mask = obj_id_mask
                 sorting_method = 'angle'
             else:
@@ -381,7 +382,14 @@ class Perceptor():
             i_eelink_rs = eelink_rs[mask]
             i_rs = rs[mask]
             i_gg = gg[mask]
-            if np.sum(mask) < self.config['response']['mask_thresh']: # actually this should be mask == 0, for safety reason, < 0.5 is used.
+            print('**'*100)
+            print()
+            #print('mask:', str(mask))
+            print()
+            print('sum mask:', str(np.sum(mask)))
+            print()
+            print('config:' + str(self.config['response']['mask_thresh']))
+            if np.sum(mask) != 0: # actually this should be mask == 0, for safety reason, < 0.5 is used.
                 # ungraspable
                 grasp_poses[object_name] = None
             else:

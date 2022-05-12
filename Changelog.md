@@ -1,12 +1,21 @@
 To do:
-* add gripper script from Ahmet (can be found on Teams)
 * need to add "rosrun tf static_transform_publisher 0 0 0 1.5707 0 0  world base_link 5" to launch files for real robot, otherwise world frame does not exist (as in ocrtoc_franka.launch and panda_control_moveit_rviz.launch in OCRTOC)
 * add correct table measurements
-* correct the area where pointcloud is captured to be true to the size of the table
+* correct the area where pointcloud is captured to be true to the size of the table'
+* Need to make perception use the new interface. 
+* Fix so that the robot does not make impossible movements. 
 
 
 General:
 * Clean up repo, remove unused folders/files, move drivers into drivers/ folder etc.
+
+03-05:
+Added the gripper script ahmet sent, did some small changes, grippped an object and recorded a video.
+Sucsessfully created grasppositions, however when trying to move to the pose, the robot makes impossible movements. Turning into itself etc.
+Changed Joint limits in the moveit config package (-180 to 180 degrees) for every joint. 
+Changed open close in the gripper interface script to use the new script, however the program itself does not use the interface so we have to rethink that. 
+done:
+* add gripper script from Ahmet (can be found on Teams)
 
 30-04:
 changed name arm_poses_Franka_realsense to arm_poses_UR10_realsense, perception_franka_in_real to perception_UR10_in_real

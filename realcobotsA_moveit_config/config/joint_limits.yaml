@@ -5,30 +5,42 @@ joint_limits:
   elbow_joint:
     has_velocity_limits: true
     max_velocity: 3.14159265359
+    max_position: 3.1415
+    min_position: -3.1415
     has_acceleration_limits: false
     max_acceleration: 0
   shoulder_lift_joint:
     has_velocity_limits: true
     max_velocity: 2.09439510239
+    max_position: 3.1415
+    min_position: -3.1415
     has_acceleration_limits: false
     max_acceleration: 0
   shoulder_pan_joint:
     has_velocity_limits: true
-    max_velocity: 2.09439510239
+    max_velocity: 2.
+    max_position: 3.1415
+    min_position: -3.1415
     has_acceleration_limits: false
     max_acceleration: 0
   wrist_1_joint:
     has_velocity_limits: true
     max_velocity: 3.14159265359
+    max_position: 3.1415
+    min_position: -3.1415
     has_acceleration_limits: false
     max_acceleration: 0
   wrist_2_joint:
     has_velocity_limits: true
     max_velocity: 3.14159265359
+    max_position: 3.1415
+    min_position: -3.1415
     has_acceleration_limits: false
     max_acceleration: 0
   wrist_3_joint:
     has_velocity_limits: true
     max_velocity: 3.14159265359
+    max_position: 3.1415
+    min_position: -3.1415
     has_acceleration_limits: false
     max_acceleration: 0
